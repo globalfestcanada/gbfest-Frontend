@@ -218,12 +218,21 @@ const ContactUs = () => {
         }
         break;
 
+      // case "message":
+      //   if (!/^[a-zA-Z0-9+\-=\.,@#$%\s]*$/.test(value)) {
+      //     error =
+      //       "Message can only contain letters, numbers, spaces, and + - = , . @ # $ %";
+      //   }
       case "message":
-        if (!/^[a-zA-Z0-9+\-=\.,@#$%\s]*$/.test(value)) {
-          error =
-            "Message can only contain letters, numbers, spaces, and + - = , . @ # $ %";
-        }
-        break;
+  if (value.length > 250) {
+    error = "Message cannot exceed 250 characters";
+  } else if (!/^[a-zA-Z0-9+\-=\.,@#$%\s]*$/.test(value)) {
+    error =
+      "Message can only contain letters, numbers, spaces, and + - = , . @ # $ %";
+  }
+  break;
+
+  
 
       default:
         break;
@@ -294,7 +303,7 @@ const ContactUs = () => {
     <section className="contact-box">
       <div className="contact-container">
         <div className="contact-info">
-          <h2>Contact Us</h2>
+          <h2>CONTACT US</h2>
           <p>
             We’d love to get more input from you! Whether you have questions,
             feedback, or ideas to make Global Fest Canada even better, we’re here to listen.

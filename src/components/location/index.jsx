@@ -4,7 +4,7 @@ import "./index.css";
 const EventLocation = () => {
   return (
     <section className="event-location">
-      <h2>Where the Event Is Happening</h2>
+      <h2>WHERE THE EVENT IS HAPPENING</h2>
 
       <p className="location-intro">
         Global Fest Canada 2026 will take place in the heart of Toronto, bringing

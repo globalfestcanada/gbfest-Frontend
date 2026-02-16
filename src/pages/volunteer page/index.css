@@ -57,12 +57,32 @@
   border-bottom-color: #3a506b;
 }
 
+/* .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+} */
 .radio-group {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   margin-top: 0.6rem;
 }
+
+.radio-group label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Fix vertical misalignment */
+.radio-group input[type="radio"] {
+  margin: 0;
+  transform: translateY(1px);
+}
+
 
 .error {
   color: #d9534f;

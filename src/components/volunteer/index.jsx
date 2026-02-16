@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Volunteer = () => {
   return (
     <section className="volunteer">
-      <h2>Volunteer With Global Fest</h2>
+      <h2>VOLUNTEER WITH GLOBAL FEST CANADA</h2>
       <div className="volunteer-content">
         {/* Left: Text */}
         <div className="volunteer-text">

@@ -31,7 +31,7 @@ const Countdown = () => {
 
   return (
     <section className="countdown">
-      <h2>Countdown to Global Fest 2026</h2>
+      <h2>COUNTDOWN TO GLOBAL FEST CANADA 2026</h2>
       <div className="countdown-timer">
         <div><span>{timeLeft.days || 0}</span><p>Days</p></div>
         <div><span>{timeLeft.hours || 0}</span><p>Hours</p></div>

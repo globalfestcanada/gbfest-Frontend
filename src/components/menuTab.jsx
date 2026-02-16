@@ -48,7 +48,7 @@ function MenuTab() {
     <nav className="menu-tab">
       <div className="menu-logo">
         <img src="/gbfest/logo.png" alt="Logo" />
-        <span>Global Fest Canada 2026</span>
+        <span>GLOBAL FEST CANADA 2026</span>
       </div>
 
       {/* Hamburger toggle */}

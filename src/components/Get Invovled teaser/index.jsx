@@ -8,7 +8,7 @@ const GetInvolvedTeaser = () => {
 
   return (
     <section className="get-involved-teaser">
-      <h2>Be Part of the Festival</h2>
+      <h2>BE PART OF THE FESTIVAL</h2>
       <p>
         Global Fest 2026 thrives because of the people who support it. 
         Whether you partner with us, participate as a vendor, or volunteer your time, every contribution helps celebrate diversity and strengthen our community.
