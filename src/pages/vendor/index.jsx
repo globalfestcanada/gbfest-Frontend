@@ -17,9 +17,12 @@ const VendorForm = () => {
 
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false); // NEW
 
-  const GOOGLE_SHEETS_URL = "https://9zmqqiw8v1.execute-api.ca-central-1.amazonaws.com/sheets";
-  const AWS_SES_URL = "https://z1csooewof.execute-api.ca-central-1.amazonaws.com/prod/";
+  const GOOGLE_SHEETS_URL =
+    "https://9zmqqiw8v1.execute-api.ca-central-1.amazonaws.com/sheets";
+  const AWS_SES_URL =
+    "https://z1csooewof.execute-api.ca-central-1.amazonaws.com/prod/";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -97,13 +100,16 @@ const VendorForm = () => {
 
     if (hasErrors) return;
 
+    setLoading(true); // START LOADING
+
     try {
-        formData.formType = "vendor";
-       await fetch(GOOGLE_SHEETS_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData),
-});
+      formData.formType = "vendor";
+
+      await fetch(GOOGLE_SHEETS_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       await fetch(AWS_SES_URL, {
         method: "POST",
@@ -129,6 +135,8 @@ const VendorForm = () => {
     } catch (err) {
       console.error("Submission error:", err);
     }
+
+    setLoading(false); // STOP LOADING
   };
 
   return (
@@ -160,7 +168,9 @@ const VendorForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {errors.businessName && <span className="error">{errors.businessName}</span>}
+                {errors.businessName && (
+                  <span className="error">{errors.businessName}</span>
+                )}
               </label>
 
               <label>
@@ -172,7 +182,9 @@ const VendorForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {errors.contactName && <span className="error">{errors.contactName}</span>}
+                {errors.contactName && (
+                  <span className="error">{errors.contactName}</span>
+                )}
               </label>
 
               <label>
@@ -226,7 +238,9 @@ const VendorForm = () => {
                   <option value="services">Services</option>
                   <option value="other">Other</option>
                 </select>
-                {errors.category && <span className="error">{errors.category}</span>}
+                {errors.category && (
+                  <span className="error">{errors.category}</span>
+                )}
               </label>
 
               <label>
@@ -238,7 +252,9 @@ const VendorForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {errors.boothSize && <span className="error">{errors.boothSize}</span>}
+                {errors.boothSize && (
+                  <span className="error">{errors.boothSize}</span>
+                )}
               </label>
 
               <label>
@@ -253,7 +269,9 @@ const VendorForm = () => {
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
-                {errors.powerRequired && <span className="error">{errors.powerRequired}</span>}
+                {errors.powerRequired && (
+                  <span className="error">{errors.powerRequired}</span>
+                )}
               </label>
 
               <label>
@@ -265,8 +283,9 @@ const VendorForm = () => {
                 />
               </label>
 
-              <button type="submit" className="submit-btn">
-                SUBMIT APPLICATION
+              <button type="submit" className="submit-btn" disabled={loading}>
+                {loading && <div className="spinner"></div>}
+                {loading ? "Submitting..." : "SUBMIT APPLICATION"}
               </button>
             </form>
           </div>

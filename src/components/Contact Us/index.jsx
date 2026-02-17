@@ -181,7 +181,6 @@
 
 // export default ContactUs;
 
-
 import React, { useState } from "react";
 import "./index.css";
 
@@ -195,6 +194,7 @@ const ContactUs = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false); // NEW
 
   const validateField = (name, value) => {
     let error = "";
@@ -218,21 +218,14 @@ const ContactUs = () => {
         }
         break;
 
-      // case "message":
-      //   if (!/^[a-zA-Z0-9+\-=\.,@#$%\s]*$/.test(value)) {
-      //     error =
-      //       "Message can only contain letters, numbers, spaces, and + - = , . @ # $ %";
-      //   }
       case "message":
-  if (value.length > 250) {
-    error = "Message cannot exceed 250 characters";
-  } else if (!/^[a-zA-Z0-9+\-=\.,@#$%\s]*$/.test(value)) {
-    error =
-      "Message can only contain letters, numbers, spaces, and + - = , . @ # $ %";
-  }
-  break;
-
-  
+        if (value.length > 250) {
+          error = "Message cannot exceed 250 characters";
+        } else if (!/^[a-zA-Z0-9+\-=\.,@#$%\s]*$/.test(value)) {
+          error =
+            "Message can only contain letters, numbers, spaces, and + - = , . @ # $ %";
+        }
+        break;
 
       default:
         break;
@@ -266,6 +259,8 @@ const ContactUs = () => {
       return;
     }
 
+    setLoading(true); // START LOADING
+
     try {
       const response = await fetch(
         "https://udz8sgbsxe.execute-api.ca-central-1.amazonaws.com/prod/contact",
@@ -279,7 +274,7 @@ const ContactUs = () => {
       const result = await response.json();
 
       if (result.status === "sent") {
-        alert("Message sent successfully!");
+        // alert("Message sent successfully!");
 
         setFormData({
           name: "",
@@ -291,12 +286,14 @@ const ContactUs = () => {
 
         setErrors({});
       } else {
-        alert("Failed to send message. Please try again.");
+        // alert("Failed to send message. Please try again.");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Something went wrong. Please try again later.");
+      // console.error("Error submitting form:", error);
+      // alert("Something went wrong. Please try again later.");
     }
+
+    setLoading(false); // STOP LOADING
   };
 
   return (
@@ -388,7 +385,11 @@ const ContactUs = () => {
               {errors.message && <span className="error">{errors.message}</span>}
             </div>
 
-            <button type="submit" className="submit-btn">Send Message</button>
+            {/* Submit Button with Spinner */}
+            <button type="submit" className="submit-btn" disabled={loading}>
+              {loading && <div className="spinner"></div>}
+              {loading ? "Sending..." : "Send Message"}
+            </button>
           </form>
         </div>
       </div>
