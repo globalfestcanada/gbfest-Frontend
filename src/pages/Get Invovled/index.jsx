@@ -17,7 +17,7 @@ const GetInvolved = () => {
 
       {/* Sponsorship (image right) */}
       <div className="involved-row row-reverse">
-        <img src="/gbfest/sponsor.png" alt="Sponsorship" />
+        <img src="/sponsor.png" alt="Sponsorship" />
         <div className="involved-content">
           <h2>Partnership </h2>
           <p>
@@ -40,7 +40,7 @@ const GetInvolved = () => {
 
       {/* Vendors (image left) */}
       <div className="involved-row">
-        <img src="/gbfest/vendor.jpg" alt="Vendors" />
+        <img src="/vendor2.jpg" alt="Vendors" />
         <div className="involved-content">
           <h2>Vendors</h2>
           <p>
@@ -63,7 +63,7 @@ const GetInvolved = () => {
 
       {/* Volunteers (image right) */}
       <div className="involved-row row-reverse">
-        <img src="volunteer.png" alt="Volunteers" />
+        <img src="/volunteering2.jpg" alt="Volunteers" />
         <div className="involved-content">
           <h2>Volunteers</h2>
           <p>
@@ -88,7 +88,7 @@ const GetInvolved = () => {
       </div>
        {/* Vendors (image left) */}
       <div className="involved-row">
-        <img src="/gbfest/cultural.jpg" alt="artist" />
+        <img src="/performance.jpg" alt="artist" />
         <div className="involved-content">
           <h2>Artist</h2>
           <p>

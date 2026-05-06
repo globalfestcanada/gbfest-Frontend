@@ -15,14 +15,14 @@ const EventLocation = () => {
 
       <div className="location-tile">
         <div className="location-details">
-          <h3>📍 Venue</h3>
+          <h3>Venue</h3>
           <p>Sankofa Square, Toronto</p>
 
-          <h3>🗓 Date</h3>
+          <h3>Date</h3>
           <p>June 21, 2026</p>
 
-          <h3>⏰ Time</h3>
-          <p>10:00 AM – 10:00 PM</p>
+          <h3>Time</h3>
+          <p>11:00 AM – 10:00 PM</p>
 
           {/* <h3>🚇 Transit</h3>
           <p>Steps away from Queen Station (Line 1)</p> */}

@@ -47,7 +47,7 @@ function MenuTab() {
   return (
     <nav className="menu-tab">
       <div className="menu-logo">
-        <img src="/gbfest/logo.png" alt="Logo" />
+        <img src="/logo.png" alt="Logo" />
         <span>GLOBAL FEST CANADA 2026</span>
       </div>
 
@@ -74,6 +74,7 @@ function MenuTab() {
   <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
   <li><Link to="/getinvolved" onClick={() => setMenuOpen(false)}>Get Involved</Link></li>
   <li><Link to="/contactUs" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+  <li><Link to="/PageantApplicationForm" onClick={() => setMenuOpen(false)}>PageantApplicationForm</Link></li>
 </ul>
 
     </nav>

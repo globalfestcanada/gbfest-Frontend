@@ -20,7 +20,7 @@ const GetInvolvedTeaser = () => {
 
       <div className="promo-columns">
         <div className="promo-column">
-          <img src="/gbfest/food vendor.jpg" alt="Food Vendors" />
+          <img src="/food-vendor.jpg" alt="Food Vendors" />
           <h3>Food Vendors</h3>
           <p>
             Become a food vendor and showcase global fusion dishes — from Asian street eats
@@ -32,7 +32,7 @@ const GetInvolvedTeaser = () => {
         </div>
 
         <div className="promo-column">
-          <img src="/gbfest/sponsor.png" alt="Sponsorship Opportunities" />
+          <img src="/sponsor.png" alt="Sponsorship Opportunities" />
           <h3>Partnership Opportunities</h3>
           <p>
             Gain visibility through stage presence, digital campaigns, and on-site activations.Celebrate diversity and community at a vibrant multicultural festival in Canada
@@ -42,12 +42,12 @@ const GetInvolvedTeaser = () => {
             className="teaser-btn"
             onClick={() => navigate("partner")}
           >
-            Become as a Partner
+            Become a Partner
           </button>
         </div>
 
         <div className="promo-column">
-          <img src="/gbfest/cultural.jpg" alt="Cultural Performances" />
+          <img src="/culturals.jpg" alt="Cultural Performances" />
           <h3>Perform With Us</h3>
           <p>
             We invite artists and performers to showcase their culture through live music, dance, and performance. 

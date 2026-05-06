@@ -8,7 +8,7 @@ const Homeslide = () => {
         <h1>GLOBAL FEST CANADA 2026</h1>
         <h2>Where cultures, creativity, and youth come to play.</h2>
         <p className="event-details">
-          📅 June 21, 2026 &nbsp; 📍 Sankofa Square, Toronto &nbsp; 🆓 Open to all
+          June 21, 2026 &nbsp;  Sankofa Square, Toronto &nbsp;  Open to all
         </p>
         {/* <div className="hero-buttons">
           <a href="#program" className="hero-btn primary">Free Entry – Save the Date</a>
