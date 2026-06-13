@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import PageantFinalCard from "../../components/PageantFinal";
 import { contestants } from "../../data/peageantData/contestantData";
 import "./index.css";
 
 const PageantListPage = () => {
 
+  const [flippedCard, setFlippedCard] = useState(null);
   const femaleContestants = contestants.filter(c => c.gender === "female");
   const maleContestants = contestants.filter(c => c.gender === "male");
 
@@ -33,7 +34,10 @@ const PageantListPage = () => {
             culture={person.culture}
             image={person.image}
             bio={person.bio}
+            isFlipped={flippedCard === index}
+            onFlip={() => setFlippedCard(flippedCard === index ? null : index)}
           />
+
         ))}
       </section>
 

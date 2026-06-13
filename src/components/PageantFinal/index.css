@@ -71,3 +71,47 @@
   line-height: 1.6;
   color: #444;
 }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .flip-card {
+    width: 90%;
+    height: 340px;
+  }
+
+  .flip-card-inner {
+    cursor: pointer;
+  }
+
+  .front-name {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .flip-card-back h3 {
+    font-size: 18px;
+  }
+
+  .flip-card-back h4 {
+    font-size: 14px;
+  }
+
+  .flip-card-back p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 600px) {
+  .vote-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (min-width: 601px) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+

@@ -4,7 +4,7 @@ export const contestants = [
     name: "Lekshmi R Nair",
     gender: "female",
     culture: "India",
-    image: "/One.jpg",
+    image: "/1.jpg",
     bio: "“My culture is the foundation of who I am. Coming from Kerala, India — known as “God’s Own Country” — I was raised with deep values of grace, respect, strength, and tradition. Kerala’s rich heritage, classical arts, festivals, natural beauty, and strong sense of community inspire me every day and shaped the woman I am today.”"
   },
   {
