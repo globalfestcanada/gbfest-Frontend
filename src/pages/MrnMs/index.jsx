@@ -97,28 +97,6 @@ const PageantApplicationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-//   const getPresignedUrl = async (fileName, fileType) => {
-//   const res = await fetch(GET_UPLOAD_URL, {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({ fileName, fileType }),
-//   });
-
-//   if (!res.ok) throw new Error("Failed to get upload URL");
-
-//   return res.json(); // { uploadUrl, objectKey }
-// };
-
-// const uploadToS3 = async (file, uploadUrl) => {
-//   const res = await fetch(uploadUrl, {
-//     method: "PUT",
-//     headers: { "Content-Type": file.type },
-//     body: file,
-//   });
-
-//   if (!res.ok) throw new Error("Failed to upload to S3");
-// };
-
 const getPresignedUrl = async (fileName, fileType) => {
   const res = await fetch(GET_UPLOAD_URL, {
     method: "POST",
@@ -590,54 +568,80 @@ const handleSubmit = async (e) => {
 
      <div className="guideline-content">
 
-  <h3>Eligibility</h3>
+  <h3>ABOUT THE EVENT</h3>
+  <p>
+    MR. & MISS Global Fest 2026 is a luxury multicultural celebration presented during Global Fest Canada 2026. 
+    This event is designed to bring together individuals from different backgrounds and cultures to showcase unity, 
+    leadership, creativity, and global representation. This is more than a pageant. It is a platform that celebrates 
+    identity, purpose, talent, and cultural pride. Participants will compete in various rounds designed to showcase 
+    personality, confidence, creativity, communication skills, stage presence, and individuality.
+  </p>
+
+  <h3>ELIGIBILITY</h3>
+  <p>Participants Must:</p>
   <ul>
-    <li>Open to individuals from all cultural backgrounds currently residing in Canada.</li>
-    <li>Applicants for Mr. Global Canada and Miss Global Canada must be at least 18 years old as of June 21, 2026.</li>
-    <li>Participants must represent their country, culture, or heritage with authenticity and respect.</li>
+    <li>Open to all participants from all communities and cultural backgrounds residing in Canada.</li>
+    <li>Be 18 years of age or older as of June 21, 2026.</li>
+    <li>Be comfortable performing on stage and represent themselves respectfully and professionally.</li>
+    <li>Be available on June 21st, 2026 for the event and follow all competition rules and conduct guidelines.</li>
   </ul>
 
-  <h3>Participation Requirements</h3>
+  <h3>SELECTION PROCESS</h3>
+  <p>1. Candidate Shortlisting will be based on:</p>
   <ul>
-    <li>All contestants must follow the schedules, rehearsals, grooming sessions, and instructions provided by the organizing team.</li>
-    <li>Valid proof of identity and eligibility may be requested (Government-issued ID, PR/Work Permit/Student Status if applicable).</li>
+    <li>Registration Form Responses</li>
+    <li>Cultural Representation</li>
+    <li>Stage Presence and communication</li>
   </ul>
 
-  <h3>Shortlisting Criteria</h3>
+  <p>2. In case of multiple registration representing the same culture/country, applicants may be requested to submit:</p>
   <ul>
-    <li>Quality and completeness of registration form responses</li>
-    <li>Authentic cultural representation</li>
-    <li>Stage presence, confidence, and communication skills</li>
-    <li>Talent, personality, and overall suitability for the platform</li>
+    <li>A self introduction Video</li>
+    <li>Additional profile information</li>
+    <li>or attend a virtual audition for final shortlisting</li>
   </ul>
 
-  <h3>Additional Requirements (if multiple applicants represent the same culture)</h3>
+  <h3>COMPETITION ROUNDS OVERVIEW</h3>
+  <p>
+    Selected finalists will participate in multiple competition segments designed to celebrate culture, confidence, 
+    individuality, communication, and stage presence.
+  </p>
+
   <ul>
-    <li>A short self‑introduction video</li>
-    <li>Additional profile or background information</li>
-    <li>Participation in a virtual audition for final selection</li>
+    <li><strong>Round 1 — Cultural Couture</strong><br/>
+      Participants wear traditional or culture-inspired outfits that highlight the beauty, history, and uniqueness of their heritage.
+    </li>
+
+    <li><strong>Round 2 — Legacy & Identity</strong><br/>
+      Continuing in the same outfit from Round 1, participants introduce themselves, talk about their cultural background, 
+      and share what multiculturalism and representing the world means to them within 60 sec.
+    </li>
+
+    <li><strong>Round 3 — Global Citizen Runway</strong><br/>
+      Participants present themselves in stylish cocktail attire, showing elegance, confidence, and personality.
+    </li>
+
+    <li><strong>Round 4 — Global Voice Q&A</strong><br/>
+      Continuing in the same outfit from Round 3, participants answer questions about leadership, diversity, culture, 
+      community involvement, and global unity.
+    </li>
   </ul>
 
-  <h3>Commitments for Shortlisted Participants</h3>
+  <h3>COMMITMENT AND CONDUCT GUIDELINES</h3>
   <ul>
-    <li>Availability for rehearsals, promotional activities, photoshoots, and event‑related sessions.</li>
-    <li>Professionalism, discipline, and respectful conduct toward fellow contestants, organizers, and communities.</li>
-  </ul>
-
-  <h3>Conduct & Disqualification</h3>
-  <ul>
-    <li>Any discriminatory, offensive, or inappropriate behaviour may result in immediate disqualification.</li>
-  </ul>
-
-  <h3>Media & Permissions</h3>
-  <ul>
-    <li>Participants grant the organizers permission to use submitted photos and videos for promotional, marketing, and media purposes related to the event.</li>
-  </ul>
-
-  <h3>Organizer Rights</h3>
-  <ul>
-    <li>The organizing team reserves the right to make final decisions regarding selection, scheduling, participation, and event conduct.</li>
-    <li>A detailed participant contract and event agreement will be provided to shortlisted candidates.</li>
+    <li>Shortlisted participants must be available for rehearsals, promotional appearances, photoshoots, media activities, 
+        and all official event-related sessions leading up to the finale.</li>
+    <li>Participants are expected to uphold professionalism, discipline, integrity, and respectful conduct toward fellow 
+        contestants, organizers, sponsors, partners, and communities at all times.</li>
+    <li>Any form of discriminatory, offensive, inappropriate, harmful, or disrespectful behaviour may result in immediate 
+        disqualification from the competition.</li>
+    <li>By participating, contestants grant Global Fest Canada and its affiliated partners permission to use submitted and 
+        event-related photos, videos, and media content for promotional, marketing, social media, press, and event coverage 
+        purposes.</li>
+    <li>The organizing committee reserves the right to make final decisions regarding participant selection, scheduling, 
+        event structure, eligibility, and overall event conduct.</li>
+    <li>A detailed Participant Agreement, Competition Rules, Media Release, and Official Event Guidelines will be provided 
+        to all selected finalists prior to the competition.</li>
   </ul>
 
 </div>

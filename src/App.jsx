@@ -1,43 +1,3 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Home from "./pages/home/";
-// import AboutUsDetail from "./pages/aboutus/";
-// import VolunteerPage from "./pages/volunteer page";
-
-
-// <Router>
-//   <Routes>
-//     <Route path="/" element={<Home />} />
-//     <Route path="/about" element={<AboutUsDetail />} />
-//     <Route path="/volunteer" element={<VolunteerPage />} />
-//   </Routes>
-// </Router>
-// function App() {
-//   return <Home />;
-// }
-
-// export default App;
-
-
-
-
-// import { Routes, Route } from "react-router-dom";
-// import Home from "./pages/home/";
-// import AboutUsDetail from "./pages/aboutus/";
-// import VolunteerPage from "./pages/volunteer page";
-
-// function App() {
-//   return (
-//     <Routes>
-//       <Route path="/" element={<Home />} />
-//       <Route path="/about" element={<AboutUsDetail />} />
-//       <Route path="/volunteer" element={<VolunteerPage />} />
-//     </Routes>
-//   );
-// }
-
-// export default App;
-
-
 
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout/layout";
@@ -51,6 +11,7 @@ import ArtistForm from "./pages/artist page";
 import VendorForm from "./pages/vendor";
 import PageantApplicationForm from "./pages/MrnMs";
 import PhotographyContestForm from "./pages/photocontest";
+import PageantListPage from "./pages/pegeantList";
 
 function App() {
   return (
@@ -67,6 +28,7 @@ function App() {
         <Route path="vendor" element={<VendorForm />} />
         <Route path="PageantApplicationForm" element={<PageantApplicationForm/>} />
         <Route path="PhotographyContest" element={<PhotographyContestForm/>} />
+        <Route path="Pageant Contestants" element={<PageantListPage/>} />
         {/* add more pages here */}
       </Route>
     </Routes>
