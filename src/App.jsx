@@ -12,6 +12,17 @@ import VendorForm from "./pages/vendor";
 import PageantApplicationForm from "./pages/MrnMs";
 import PhotographyContestForm from "./pages/photocontest";
 import PageantListPage from "./pages/pegeantList";
+import VotePage from "./pages/votepage";
+import ArtistCheckin from "./pages/ArtistCheckIn";
+import ArtistScanner from "./pages/ArtistScanner";
+import ArtistCheckinConfirm from "./pages/ArtistCheckinConfirm";
+import AdminDashboard from "./pages/AdminDashboard";
+import VolunteerCheckin from "./pages/VolunteerCheckin";
+import VolunteerScanner from "./pages/VolunteerScanner";
+import VolunteerConfirm from "./pages/VolunteerConfirm";
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 
 function App() {
   return (
@@ -29,6 +40,21 @@ function App() {
         <Route path="PageantApplicationForm" element={<PageantApplicationForm/>} />
         <Route path="PhotographyContest" element={<PhotographyContestForm/>} />
         <Route path="Pageant Contestants" element={<PageantListPage/>} />
+        <Route path="vote" element={<VotePage/>} />
+        <Route path="artist-checkin" element={<ArtistCheckin />} />
+        <Route path="artist-scan" element={<ArtistScanner />} />
+        <Route path="artist-checkin-confirm" element={<ArtistCheckinConfirm />} />
+        <Route path="admin" element={<AdminDashboard />} />
+        <Route path="volunteer-checkin" element={<VolunteerCheckin />} />
+        <Route path="volunteer-scanner" element={<VolunteerScanner />} />
+        <Route path="volunteer-confirm" element={<VolunteerConfirm />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>
+  }
+/>
+
+
+
         {/* add more pages here */}
       </Route>
     </Routes>

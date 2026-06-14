@@ -1,0 +1,86 @@
+.volunteer-confirm-page {
+  width: 100%;
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.volunteer-confirm-page h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #0b132b;
+}
+
+.volunteer-info-box {
+  text-align: left;
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.volunteer-info-box p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.confirm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.confirm-form input,
+.confirm-form textarea {
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f7f9fc;
+  transition: 0.25s ease;
+}
+
+.confirm-form input:focus,
+.confirm-form textarea:focus {
+  border-color: #3a506b;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(58, 80, 107, 0.25);
+}
+
+.confirm-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.confirm-form button {
+  padding: 14px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.confirm-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.confirm-message {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0b132b;
+}

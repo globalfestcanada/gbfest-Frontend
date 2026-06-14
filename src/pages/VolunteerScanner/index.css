@@ -1,0 +1,79 @@
+.volunteer-scanner-page {
+  width: 100%;
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.volunteer-scanner-page h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #0b132b;
+}
+
+.scanner-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.scanner-video {
+  width: 100%;
+  display: block;
+}
+
+.scanner-canvas {
+  display: none;
+}
+
+.scanner-error {
+  margin-top: 20px;
+  color: #d11a1a;
+  font-weight: 600;
+}
+
+
+/* Uniform button styling for volunteer scanner */
+#volunteer-reader button,
+#volunteer-reader a {
+  background: linear-gradient(to right, #0b132b, #3a506b) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: 0.25s ease !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  width: 100% !important;
+  max-width: 260px !important;
+  margin: 8px 0 !important;
+}
+
+/* Hover effect */
+#volunteer-reader button:hover,
+#volunteer-reader a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+/* Fix spacing between the two buttons */
+#volunteer-reader__dashboard_section_csr button,
+#volunteer-reader__dashboard_section_csr a {
+  margin: 8px 0 !important;
+  width: 100% !important;
+  max-width: 260px !important;
+}
+

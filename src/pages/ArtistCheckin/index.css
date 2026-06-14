@@ -1,0 +1,174 @@
+/* ------------------------------
+   PAGE WRAPPER (FULLY FIXED)
+------------------------------ */
+.artist-checkin-page {
+  width: 100%;
+  max-width: 750px;              /* wider, more balanced */
+  margin: 60px auto;             /* centers the card */
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12); /* softer, wider shadow */
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.4s ease;
+  box-sizing: border-box;        /* prevents overflow issues */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.artist-checkin-page h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #0b132b;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ------------------------------
+   FORM (CENTERED + FIXED)
+------------------------------ */
+.artist-checkin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 500px;              /* keeps inputs centered */
+  margin: 0 auto;                /* centers the form inside the card */
+}
+
+/* ------------------------------
+   INPUTS
+------------------------------ */
+.artist-checkin-form input,
+.artist-checkin-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f7f9fc;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.artist-checkin-form input:focus,
+.artist-checkin-form textarea:focus {
+  border-color: #3a506b;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(58, 80, 107, 0.25);
+}
+
+.artist-checkin-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ------------------------------
+   BUTTON (MATCHES teaser-btn)
+------------------------------ */
+.artist-checkin-form button,
+.proceed-btn {
+  padding: 14px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.artist-checkin-form button:hover,
+.proceed-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ------------------------------
+   MESSAGE
+------------------------------ */
+.artist-message {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #444;
+  text-align: center;
+}
+
+/* ------------------------------
+   QR SECTION
+------------------------------ */
+.qr-section {
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  background: #fdfdfd;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.qr-section p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #0b132b;
+  font-weight: 600;
+}
+
+.qr-section img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ------------------------------
+   MOBILE FIXES
+------------------------------ */
+@media (max-width: 600px) {
+  .artist-checkin-page {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .artist-checkin-form {
+    max-width: 100%;
+  }
+
+  .artist-checkin-page h1 {
+    font-size: 26px;
+  }
+
+  .qr-section img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.save-qr-btn {
+  margin-top: 14px;
+  padding: 8px 14px; /* smaller button */
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px; /* reduced font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: inline-block;
+}
+
+.save-qr-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+

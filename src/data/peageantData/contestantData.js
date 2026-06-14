@@ -99,14 +99,14 @@ export const contestants = [
     image: "/16.jpg",
     bio: `"It is who I am and where I draw my strength from traveling into new cultures year to year "`
   },
-  {
-    no: "17",
-    name: "Alexis Hanoman",
-    gender: "female",
-    culture: "Guyana",
-    image: "/17.jpg",
-    bio: `"My culture is unique and vibrant. It focuses on East Indian and African heritage while blending Amerindian, European and Chinese cultures. In Guyana, there are  6 different races living in unity just like Toronto. It is multicultural. It is located in South America but is linked  culturally to the Caribbean."`
-  },
+  // {
+  //   no: "17",
+  //   name: "Alexis Hanoman",
+  //   gender: "female",
+  //   culture: "Guyana",
+  //   image: "/17.jpg",
+  //   bio: `"My culture is unique and vibrant. It focuses on East Indian and African heritage while blending Amerindian, European and Chinese cultures. In Guyana, there are  6 different races living in unity just like Toronto. It is multicultural. It is located in South America but is linked  culturally to the Caribbean."`
+  // },
   {
     no: "18",
     name: "Noreitta Ramocan",

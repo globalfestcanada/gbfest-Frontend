@@ -1,0 +1,121 @@
+.volunteer-checkin-page {
+  width: 100%;
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.volunteer-checkin-page h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #0b132b;
+  letter-spacing: 0.5px;
+}
+
+.volunteer-checkin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.volunteer-checkin-form input,
+.volunteer-checkin-form textarea {
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f7f9fc;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.volunteer-checkin-form input:focus,
+.volunteer-checkin-form textarea:focus {
+  border-color: #3a506b;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(58, 80, 107, 0.25);
+}
+
+.volunteer-checkin-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.volunteer-checkin-form button {
+  padding: 14px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.volunteer-checkin-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.volunteer-message {
+  margin-top: 18px;
+  font-size: 15px;
+  color: #0b132b;
+  font-weight: 600;
+}
+
+.qr-section {
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  background: #fdfdfd;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.qr-section img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.save-qr-btn {
+  margin-top: 14px;
+  padding: 8px 14px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.save-qr-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
