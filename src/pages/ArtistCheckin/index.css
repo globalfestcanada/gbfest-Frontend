@@ -3,7 +3,7 @@
 ------------------------------ */
 .artist-checkin-page {
   width: 100%;
-  max-width: 750px;              /* wider, more balanced */
+  max-width: 750px;             /* wider, more balanced */
   margin: 60px auto;             /* centers the card */
   padding: 40px;
   background: #ffffff;
@@ -130,29 +130,6 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ------------------------------
-   MOBILE FIXES
------------------------------- */
-@media (max-width: 600px) {
-  .artist-checkin-page {
-    margin: 20px;
-    padding: 25px;
-  }
-
-  .artist-checkin-form {
-    max-width: 100%;
-  }
-
-  .artist-checkin-page h1 {
-    font-size: 26px;
-  }
-
-  .qr-section img {
-    width: 180px;
-    height: 180px;
-  }
-}
-
 .save-qr-btn {
   margin-top: 14px;
   padding: 8px 14px; /* smaller button */
@@ -172,3 +149,49 @@
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
+/* ------------------------------
+   MOBILE RESPONSIVE BREAKPOINT
+------------------------------ */
+@media (max-width: 600px) {
+  .artist-checkin-page {
+    margin: 0 auto;         /* Removes gaps to make layout sit flush against the navbar */
+    padding: 30px 20px;     /* Comfortable internal mobile breathing room */
+    border-radius: 0px;     /* Cleans up the mobile UI framing cuts */
+    box-shadow: none;       /* Disables heavy shadows for flat mobile view aesthetics */
+  }
+
+  .artist-checkin-form {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .artist-checkin-page h1 {
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .artist-checkin-form input,
+  .artist-checkin-form textarea {
+    padding: 14px;
+    font-size: 15px;       /* 15px prevents mobile Safari text zooming layout shift bugs */
+  }
+
+  .artist-checkin-form button,
+  .proceed-btn {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .qr-section {
+    margin-top: 25px;
+    padding: 20px;
+  }
+
+  .qr-section img {
+    width: 200px;          /* Adjusted up to 200px for enhanced visibility on screens like iPhone 14 Pro Max */
+    height: 200px;
+  }
+}
