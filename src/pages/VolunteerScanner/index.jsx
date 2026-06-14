@@ -1,4 +1,83 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+// import { Html5QrcodeScanner } from "html5-qrcode";
+// import { useNavigate } from "react-router-dom";
+// import "./index.css";
+
+// const VolunteerScanner = () => {
+//   const [volunteer, setVolunteer] = useState(null);
+//   const [message, setMessage] = useState("");
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     const scanner = new Html5QrcodeScanner(
+//       "volunteer-reader",
+//       { fps: 10, qrbox: 250 },
+//       false
+//     );
+
+//     scanner.render(
+//       async (decodedText) => {
+//         try {
+//           console.log("SCANNED:", decodedText);
+
+//           const res = await fetch(
+//             `https://globalfest-backend.onrender.com/api/volunteer/get?qrId=${decodedText}`
+//           );
+//           const data = await res.json();
+
+//           if (data.success) {
+//             setVolunteer(data.volunteer);
+//             setMessage("");
+//           } else {
+//             setVolunteer(null);
+//             setMessage("Volunteer not found.");
+//           }
+//         } catch (err) {
+//           setMessage("Error fetching volunteer.");
+//         }
+//       },
+//       (error) => {
+//         // ignore scan errors
+//       }
+//     );
+
+//     return () => scanner.clear();
+//   }, []);
+
+//   return (
+//     <div className="volunteer-scanner-page">
+//       <h1>Volunteer QR Scanner</h1>
+
+//       <div id="volunteer-reader" className="scanner-box"></div>
+
+//       {message && <p className="scanner-error">{message}</p>}
+
+//       {volunteer && (
+//         <div className="volunteer-info">
+//           <h2>Volunteer Found</h2>
+//           <p><strong>Name:</strong> {volunteer.fullName}</p>
+//           <p><strong>Role:</strong> {volunteer.role}</p>
+//           <p><strong>Phone:</strong> {volunteer.phone}</p>
+//           <p><strong>Email:</strong> {volunteer.email}</p>
+
+//           <button
+//             className="proceed-btn"
+//             onClick={() =>
+//               navigate(`/volunteer-confirm?qrId=${volunteer.qrId}`)
+//             }
+//           >
+//             Proceed to Check-In
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default VolunteerScanner;
+
+
+import React, { useEffect, useState, useRef } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
@@ -6,7 +85,11 @@ import "./index.css";
 const VolunteerScanner = () => {
   const [volunteer, setVolunteer] = useState(null);
   const [message, setMessage] = useState("");
+  const [isAlreadyScanned, setIsAlreadyScanned] = useState(false);
   const navigate = useNavigate();
+  
+  // Stable scanner reference tracking across component render cycles
+  const scannerRef = useRef(null);
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
@@ -14,6 +97,8 @@ const VolunteerScanner = () => {
       { fps: 10, qrbox: 250 },
       false
     );
+
+    scannerRef.current = scanner;
 
     scanner.render(
       async (decodedText) => {
@@ -26,8 +111,28 @@ const VolunteerScanner = () => {
           const data = await res.json();
 
           if (data.success) {
-            setVolunteer(data.volunteer);
-            setMessage("");
+            // Check if the volunteer is already flag-marked as checked in
+            if (data.volunteer.status === "Checked In" || data.volunteer.isCheckedIn) {
+              setIsAlreadyScanned(true);
+              setVolunteer(data.volunteer);
+              setMessage("This volunteer has already been checked in.");
+            } else {
+              setIsAlreadyScanned(false);
+              setVolunteer(data.volunteer);
+              setMessage("");
+            }
+
+            // 1. Shut down the hardware camera and clear the scanner element UI
+            if (scannerRef.current) {
+              await scannerRef.current.clear();
+            }
+
+            // 2. Smoothly snap the viewport back to top so results are in focus
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+
           } else {
             setVolunteer(null);
             setMessage("Volunteer not found.");
@@ -37,11 +142,15 @@ const VolunteerScanner = () => {
         }
       },
       (error) => {
-        // ignore scan errors
+        // ignore scan jitter errors
       }
     );
 
-    return () => scanner.clear();
+    return () => {
+      if (scannerRef.current) {
+        scannerRef.current.clear().catch((err) => console.log("Cleanup skipped:", err));
+      }
+    };
   }, []);
 
   return (
@@ -50,24 +159,34 @@ const VolunteerScanner = () => {
 
       <div id="volunteer-reader" className="scanner-box"></div>
 
-      {message && <p className="scanner-error">{message}</p>}
+      {message && (
+        <p className="scanner-error" style={{ color: isAlreadyScanned ? "#d11a1a" : "#0b132b" }}>
+          {message}
+        </p>
+      )}
 
       {volunteer && (
         <div className="volunteer-info">
-          <h2>Volunteer Found</h2>
+          <h2>{isAlreadyScanned ? "Check-in Status" : "Volunteer Found"}</h2>
           <p><strong>Name:</strong> {volunteer.fullName}</p>
           <p><strong>Role:</strong> {volunteer.role}</p>
           <p><strong>Phone:</strong> {volunteer.phone}</p>
           <p><strong>Email:</strong> {volunteer.email}</p>
 
-          <button
-            className="proceed-btn"
-            onClick={() =>
-              navigate(`/volunteer-confirm?qrId=${volunteer.qrId}`)
-            }
-          >
-            Proceed to Check-In
-          </button>
+          {isAlreadyScanned ? (
+            <button className="proceed-btn" onClick={() => window.location.reload()}>
+              Scan Another
+            </button>
+          ) : (
+            <button
+              className="proceed-btn"
+              onClick={() =>
+                navigate(`/volunteer-confirm?qrId=${volunteer.qrId}`)
+              }
+            >
+              Proceed to Check-In
+            </button>
+          )}
         </div>
       )}
     </div>
