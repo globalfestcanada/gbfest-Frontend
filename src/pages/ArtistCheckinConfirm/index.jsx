@@ -16,7 +16,7 @@ const ArtistCheckinConfirm = () => {
   useEffect(() => {
     const fetchArtist = async () => {
       const res = await fetch(
-        `http://localhost:4000/api/artist/get?qrId=${qrId}`
+        `https://globalfest-backend.onrender.com/api/artist/get?qrId=${qrId}`
       );
       const data = await res.json();
       if (data.success) setArtist(data.artist);
@@ -32,7 +32,7 @@ const ArtistCheckinConfirm = () => {
       return;
     }
 
-    const res = await fetch("http://localhost:4000/api/artist/checkin", {
+    const res = await fetch("https://globalfest-backend.onrender.com/api/artist/checkin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

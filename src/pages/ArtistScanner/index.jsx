@@ -23,7 +23,7 @@ const ArtistScanner = () => {
             console.log("SCANNED:", decodedText);
 
           const res = await fetch(
-            `http://localhost:4000/api/artist/get?qrId=${decodedText}`
+            `https://globalfest-backend.onrender.com/api/artist/get?qrId=${decodedText}`
           );
           const data = await res.json();
 

@@ -95,7 +95,7 @@ const VotePage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/vote", {
+      const res = await fetch("https://globalfest-backend.onrender.com/api/vote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -12,7 +12,7 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:4000/api/admin/auth/login", {
+    const res = await fetch("https://globalfest-backend.onrender.com/api/admin/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

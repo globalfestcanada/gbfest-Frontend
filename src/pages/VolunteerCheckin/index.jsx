@@ -19,7 +19,7 @@ export default function VolunteerCheckin() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/volunteer/register", {
+      const res = await fetch("https://globalfest-backend.onrender.com/api/volunteer/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

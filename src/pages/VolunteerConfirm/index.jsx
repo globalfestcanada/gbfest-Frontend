@@ -21,7 +21,7 @@ export default function VolunteerConfirm() {
 
   const fetchVolunteer = async () => {
     try {
-      const res = await fetch(`http://localhost:4000/api/volunteer/get?qrId=${qrId}`);
+      const res = await fetch(`https://globalfest-backend.onrender.com/api/volunteer/get?qrId=${qrId}`);
       const data = await res.json();
 
       if (data.success) {
@@ -41,7 +41,7 @@ export default function VolunteerConfirm() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/volunteer/checkin", {
+      const res = await fetch("https://globalfest-backend.onrender.com/api/volunteer/checkin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

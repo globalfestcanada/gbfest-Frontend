@@ -20,7 +20,7 @@ const ArtistCheckin = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/artist/register", {
+      const res = await fetch("https://globalfest-backend.onrender.com/api/artist/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -21,7 +21,7 @@ const VolunteerScanner = () => {
           console.log("SCANNED:", decodedText);
 
           const res = await fetch(
-            `http://localhost:4000/api/volunteer/get?qrId=${decodedText}`
+            `https://globalfest-backend.onrender.com/api/volunteer/get?qrId=${decodedText}`
           );
           const data = await res.json();
 
