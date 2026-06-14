@@ -1,3 +1,6 @@
+/* ------------------------------
+   VOLUNTEER SCANNER PAGE WRAPPER
+------------------------------ */
 .volunteer-scanner-page {
   width: 100%;
   max-width: 750px;
@@ -8,6 +11,7 @@
   box-shadow: 0 10px 35px rgba(0,0,0,0.12);
   font-family: "Poppins", sans-serif;
   text-align: center;
+  box-sizing: border-box; /* Crucial structural safety rule for calculations */
 }
 
 .volunteer-scanner-page h1 {
@@ -17,6 +21,9 @@
   color: #0b132b;
 }
 
+/* ------------------------------
+   SCANNER UI LAYOUTS
+------------------------------ */
 .scanner-box {
   position: relative;
   width: 100%;
@@ -42,16 +49,40 @@
   font-weight: 600;
 }
 
+/* ------------------------------
+   MOBILE RESPONSIVE BREAKPOINT
+------------------------------ */
+@media (max-width: 600px) {
+  .volunteer-scanner-page {
+    margin: 0 auto;         /* Drops outer spacing to align with viewport edge */
+    padding: 30px 20px;     /* Comfortable internal mobile breathing room */
+    border-radius: 0px;     /* Flush look underneath global app navigation header */
+    box-shadow: none;       /* Disables desktop shadows for a flat, native feel */
+  }
 
+  .volunteer-scanner-page h1 {
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .scanner-box {
+    max-width: 320px;       /* Widens the viewfinder window slightly for easier scanning */
+  }
+}
+
+/* ------------------------------
+   HTML5-QRCODE LIBRARY OVERRIDES
+------------------------------ */
 /* Uniform button styling for volunteer scanner */
 #volunteer-reader button,
 #volunteer-reader a {
   background: linear-gradient(to right, #0b132b, #3a506b) !important;
   color: #fff !important;
   border: none !important;
-  padding: 10px 16px !important;
+  padding: 12px 16px !important; /* Slightly increased padding for easier touch targets */
   border-radius: 8px !important;
-  font-size: 14px !important;
+  font-size: 15px !important;    /* 15px stops mobile Safari text zooming bugs */
   font-weight: 600 !important;
   cursor: pointer !important;
   transition: 0.25s ease !important;
@@ -74,6 +105,5 @@
 #volunteer-reader__dashboard_section_csr a {
   margin: 8px 0 !important;
   width: 100% !important;
-  max-width: 260px !important;
+  max-width: 280px !important; /* Expanded slightly to give longer strings breathing room */
 }
-

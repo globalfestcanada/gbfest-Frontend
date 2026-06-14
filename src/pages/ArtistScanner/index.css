@@ -12,7 +12,7 @@
   font-family: "Poppins", sans-serif;
   text-align: center;
   animation: fadeIn 0.4s ease;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding behaves inside fixed widths */
 }
 
 @keyframes fadeIn {
@@ -100,33 +100,43 @@
 }
 
 /* ------------------------------
-   MOBILE
+   MOBILE RESPONSIVE BREAKPOINT
 ------------------------------ */
 @media (max-width: 600px) {
   .scanner-page {
-    margin: 20px;
-    padding: 25px;
+    margin: 0 auto;         /* Removes desktop margins to flush component to viewport edges */
+    padding: 30px 20px;     /* Leaves balanced breathing room inside mobile screens */
+    border-radius: 0px;     /* Seamless layout connection directly under global nav */
+    box-shadow: none;       /* Drops heavy shadows for flat mobile view aesthetics */
+  }
+
+  .scanner-page h1 {
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 25px;
   }
 
   .scanner-box {
-    max-width: 280px;
+    max-width: 320px;       /* Increased slightly from 280px to maximize the QR targeting frame area */
   }
 
   .artist-info {
-    padding: 18px;
+    padding: 20px;
+    border-radius: 12px;
   }
 }
 
-
-/* Override html5-qrcode default buttons */
+/* ------------------------------
+   HTML5-QRCODE LIBRARY OVERRIDES
+------------------------------ */
 #reader button,
 #reader a {
   background: linear-gradient(to right, #0b132b, #3a506b) !important;
   color: #fff !important;
   border: none !important;
-  padding: 10px 16px !important;
+  padding: 12px 16px !important; /* Slightly increased padding for easier touch interaction */
   border-radius: 8px !important;
-  font-size: 14px !important;
+  font-size: 15px !important;    /* 15px prevents mobile Safari text zoom anomalies */
   font-weight: 600 !important;
   cursor: pointer !important;
   transition: 0.25s ease !important;
@@ -146,5 +156,5 @@
 #reader__dashboard_section_csr a {
   margin: 8px 0 !important;
   width: 100% !important;
-  max-width: 260px !important;
+  max-width: 280px !important; /* Expanded slightly to give text strings like "Request Camera Permissions" cleaner breathing room */
 }

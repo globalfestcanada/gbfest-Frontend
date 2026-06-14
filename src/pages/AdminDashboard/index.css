@@ -170,6 +170,23 @@ tbody td {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+.logout-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.20);
+}
 /* ------------------------------
    TABLE STYLING
 ------------------------------ */
@@ -256,3 +273,69 @@ tbody td {
     color: #0b132b;
   }
 }
+/* -----------------------------------------
+   MOBILE CARD LAYOUT (Artists + Volunteers)
+------------------------------------------ */
+@media (max-width: 480px) {
+
+  /* Hide the table entirely */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background: #ffffff;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  /* Label before each value */
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #0b132b;
+  }
+  /* -----------------------------------------
+   MOBILE LOGOUT BUTTON POSITIONING
+------------------------------------------ */
+@media (max-width: 480px) {
+
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* spacing between header and cards */
+  }
+
+  .logout-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #0b132b, #3a506b);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
+
+}
+
+

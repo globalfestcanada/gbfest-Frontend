@@ -8,6 +8,7 @@
   box-shadow: 0 10px 35px rgba(0,0,0,0.12);
   font-family: "Poppins", sans-serif;
   text-align: center;
+  box-sizing: border-box; /* Ensures padding doesn't break widths */
 }
 
 .volunteer-confirm-page h1 {
@@ -35,6 +36,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  width: 100%;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -47,6 +49,7 @@
   font-size: 15px;
   background: #f7f9fc;
   transition: 0.25s ease;
+  box-sizing: border-box;
 }
 
 .confirm-form input:focus,
@@ -79,8 +82,54 @@
 }
 
 .confirm-message {
-  margin-top: 20px;
+  margin: 20px 0 0;
   font-size: 15px;
   font-weight: 600;
   color: #0b132b;
+}
+
+/* ------------------------------
+   MOBILE RESPONSIVE BREAKPOINT
+------------------------------ */
+@media (max-width: 600px) {
+  .volunteer-confirm-page {
+    margin: 0 auto;         /* Removes desktop margins to flush card to layout edges */
+    padding: 30px 20px;     /* Leaves balanced breathing room inside the screen */
+    border-radius: 0px;     /* Flushes background seamlessly under header */
+    box-shadow: none;       /* Disables desktop shadows for a native mobile look */
+  }
+
+  .volunteer-confirm-page h1 {
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .volunteer-info-box {
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+  }
+
+  .volunteer-info-box p {
+    font-size: 15px;       /* Keeps text perfectly readable */
+  }
+
+  .confirm-form {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .confirm-form input,
+  .confirm-form textarea {
+    padding: 14px;
+    font-size: 15px;       /* Eliminates iOS zoom triggers on mobile Safari */
+  }
+
+  .confirm-form button {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
 }
