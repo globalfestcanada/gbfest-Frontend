@@ -15,7 +15,7 @@ const FestivalAnnouncements = () => {
         {/* PAGEANT */}
         <div
           className="announcement-card fade-in"
-          onClick={() => navigate("/PageantApplicationForm")}
+          onClick={() => navigate("/pageant-registration-closed")}
         >
           <div className="image-frame">
             <img src="/Pageant.jpg" alt="Pageant" />

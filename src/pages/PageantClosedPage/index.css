@@ -1,0 +1,113 @@
+.closed-page-wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8fafc;
+  }
+
+.closed-page-card {
+  background: #ffffff;
+  border-top: 5px solid; /* Premium red brand line accent */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-block;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+}
+
+.closed-page-title {
+  color: #0f172a;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.03em;
+}
+
+.closed-page-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e2e8f0;
+  width: 60px;
+  margin: 24px auto;
+}
+
+.closed-page-text {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.closed-page-thankyou {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 30px 0;
+}
+
+.view-contestants-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  width: 100%;
+}
+
+.view-contestants-btn:hover {
+  background-color: #1e293b;
+}
+
+.view-contestants-btn:active {
+  transform: scale(0.98);
+}
+
+.closed-page-footer {
+  margin-top: 32px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.closed-page-footer p {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Responsive breakpoint layout updates */
+@media (max-width: 480px) {
+  .closed-page-card {
+    padding: 24px;
+  }
+
+  .closed-page-title {
+    font-size: 1.4rem;
+  }
+}
