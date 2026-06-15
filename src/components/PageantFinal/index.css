@@ -1,7 +1,19 @@
+/* Base Card Item Wrapper */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+  width: 240px;
+}
+
+/* 3D Perspective Box */
 .flip-card {
   background: transparent;
-  width: 280px;
-  height: 380px;
+  width: 100%;
+  height: 320px;
   perspective: 1200px;
 }
 
@@ -9,15 +21,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.9s ease;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* FRONT */
+/* FRONT & BACK PANELS */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -26,164 +34,116 @@
   backface-visibility: hidden;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+
+/* Front Side Presentation - Cleaned to show posters perfectly */
+.flip-card-front {
+  background-color: #0b132b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .flip-card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.front-name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 12px;
-  background: rgba(0,0,0,0.55);
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* BACK */
+/* Back Side Details */
 .flip-card-back {
-  background: white;
+  background: #ffffff;
   transform: rotateY(180deg);
-  padding: 20px;
+  padding: 16px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #eceff1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-back h3 {
-  font-size: 22px;
-  margin-bottom: 5px;
+  font-size: 18px;
+  margin: 0 0 4px 0;
+  color: #0b132b;
+  font-weight: 700;
 }
 
 .flip-card-back h4 {
-  font-size: 15px;
-  color: #777;
-  margin-bottom: 15px;
+  font-size: 13px;
+  color: #3a506b;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 .flip-card-back p {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #4a5568;
+  margin: 0;
+  overflow-y: auto; 
+}
+
+/* Primary Uniform Vote Button Style */
+.vote-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: linear-gradient(to right, #0b132b, #3a506b) !important;
+  color: #fff !important;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
   font-size: 15px;
-  line-height: 1.6;
-  color: #444;
-}
-/* MOBILE OPTIMIZATION */
-@media (max-width: 600px) {
-  .flip-card {
-    width: 90%;
-    height: 340px;
-  }
-
-  .flip-card-inner {
-    cursor: pointer;
-  }
-
-  .front-name {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .flip-card-back h3 {
-    font-size: 18px;
-  }
-
-  .flip-card-back h4 {
-    font-size: 14px;
-  }
-
-  .flip-card-back p {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-}
-@media (max-width: 600px) {
-  .vote-btn {
-    padding: 6px 10px;
-    font-size: 12px;
-    top: 8px;
-    right: 8px;
-  }
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  z-index: 5;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 10px rgba(11, 19, 43, 0.15);
 }
 
+.vote-btn:hover {
+  opacity: 0.93;
+}
+
+/* DESKTOP HOVER STATES ONLY */
 @media (min-width: 601px) {
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
 }
 
-.vote-btn {
-  width: 80%;
-  margin: 12px auto 0 auto;
-  display: block;
-  background: #d4af37;
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.vote-btn:hover {
-  background: #b8922c;
-}
-
+/* RESPONSIVE MOBILE FIXES */
 @media (max-width: 600px) {
+  .card-wrapper {
+    width: 100%;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .flip-card {
+    height: 330px; 
+  }
+
+  .flip-card-inner {
+    cursor: pointer;
+  }
+
+  .flip-card-back h3 {
+    font-size: 16px;
+  }
+
+  .flip-card-back p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
   .vote-btn {
-    width: 90%;
     padding: 10px;
     font-size: 14px;
   }
 }
-
-
-.card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Flip card stays the same */
-.flip-card {
-  background: transparent;
-  width: 280px;
-  height: 380px;
-  perspective: 1200px;
-}
-
-/* ⭐ Vote button OUTSIDE the flip card */
-.vote-btn {
-  margin-top: 12px;
-  width: 80%;
-  background: #d4af37;
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
-  font-weight: 600;
-  position: relative;
-  z-index: 5; 
-}
-
-.vote-btn:hover {
-  background: #b8922c;
-}
-
-@media (max-width: 600px) {
-  .vote-btn {
-    width: 90%;
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-

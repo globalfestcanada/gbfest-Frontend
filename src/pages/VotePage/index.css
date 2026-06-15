@@ -1,18 +1,36 @@
 .vote-page {
   max-width: 480px;
   margin: 60px auto;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
-  font-family: Georgia, serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-sizing: border-box;
 }
 
 .vote-page h1 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #0b132b;
 }
 
 .contestant-label {
   font-size: 18px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form structure container */
+.vote-form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -22,38 +40,91 @@
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
-.vote-page button {
+/* Fine print disclaimer text rules */
+.vote-fine-print {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #666;
+  margin: 0;
+  text-align: left;
+  font-style: italic;
+}
+
+/* Primary Action Button - Uniform Global Gradient Style */
+.vote-submit-btn {
   width: 100%;
-  margin-top: 20px;
   padding: 14px;
-  background: #d4af37;
-  color: white;
+  background: linear-gradient(to right, #0b132b, #3a506b) !important;
+  color: #fff !important;
   border: none;
   border-radius: 8px;
   font-size: 18px;
   cursor: pointer;
   font-weight: 600;
+  transition: opacity 0.2s ease;
 }
 
+.vote-submit-btn:hover {
+  opacity: 0.94;
+}
+
+.vote-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* System messages */
 .vote-message {
   margin-top: 20px;
-  font-size: 16px;
-  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  width: 100%;
+  display: block;
+}
+
+.success-msg {
+  color: #2e7d32;
+}
+
+.error-msg {
+  color: #d32f2f;
+}
+
+/* Clean, balanced fallback navigation links */
+.change-mind-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.secondary-back-link {
+  color: #3a506b;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.secondary-back-link:hover {
+  color: #0b132b;
 }
 
 @media (max-width: 600px) {
   .vote-page {
-    margin-top: 40px;
-    padding: 16px;
+    margin: 40px auto;
+    padding: 20px 16px;
+    box-shadow: none;
   }
 
   .vote-page h1 {
     font-size: 24px;
   }
 
-  .vote-page button {
+  .vote-submit-btn {
     font-size: 16px;
   }
 }
