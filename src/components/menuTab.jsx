@@ -29,6 +29,7 @@ function MenuTab() {
   <li><Link to="/getinvolved" onClick={() => setMenuOpen(false)}>Get Involved</Link></li>
   <li><Link to="/contactUs" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
   <li><Link to="/Pageant Contestants" onClick={() => setMenuOpen(false)}>Pageant Contestants</Link></li>
+  <li><Link to="/Performers" onClick={() => setMenuOpen(false)}>Our Performers</Link></li>
 </ul>
 
     </nav>

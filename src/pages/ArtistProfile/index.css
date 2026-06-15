@@ -1,0 +1,123 @@
+/* Fallback Page States */
+.profile-error-container {
+  text-align: center;
+  padding: 100px;
+}
+
+.profile-loading-text {
+  text-align: center;
+  padding: 100px;
+  color: #333;
+}
+
+/* Page Layout Wrapper */
+.profile-page-container {
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Control Navigation Trigger Button */
+.profile-back-btn {
+  background-color: #0b132b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  transition: background 0.2s ease;
+}
+
+.profile-back-btn:hover {
+  background-color: #1c2e5c;
+}
+
+/* Master Grid Card Unit Container */
+.profile-main-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Image Presentation Section */
+.profile-image-column {
+  flex: 1 1 400px;
+  max-height: 550px;
+}
+
+.profile-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Metadata Text Elements Layout */
+.profile-info-column {
+  flex: 1 1 500px;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Text Sub-elements Styling */
+.profile-type-tag {
+  background-color: #3a506b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.profile-artist-name {
+  font-size: 36px;
+  color: #0b132b;
+  margin: 0 0 15px 0;
+  font-weight: 800;
+}
+
+.profile-accent-divider {
+  height: 4px;
+  width: 60px;
+  background-color: #3a506b;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+
+.profile-section-header {
+  font-size: 18px;
+  color: #3a506b;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.profile-bio-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin: 0;
+}
+
+/* Mobile Breakpoint Optimizations */
+@media (max-width: 768px) {
+  .profile-info-column {
+    padding: 25px;
+  }
+  .profile-artist-name {
+    font-size: 28px;
+  }
+}

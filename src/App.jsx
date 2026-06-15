@@ -22,6 +22,8 @@ import VolunteerScanner from "./pages/VolunteerScanner";
 import VolunteerConfirm from "./pages/VolunteerConfirm";
 import AdminLogin from "./pages/AdminLogin";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ArtistGallery from "./pages/artistGallery";
+import ArtistProfile from "./pages/ArtistProfile";
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
         <Route path="PageantApplicationForm" element={<PageantApplicationForm/>} />
         <Route path="PhotographyContest" element={<PhotographyContestForm/>} />
         <Route path="Pageant Contestants" element={<PageantListPage/>} />
+        <Route path="Performers" element={<ArtistGallery/>} />
+        <Route path="artist/:slug" element={<ArtistProfile />} />
         <Route path="vote" element={<VotePage/>} />
         <Route path="artist-checkin" element={<ArtistCheckin />} />
         <Route path="artist-scan" element={<ArtistScanner />} />
