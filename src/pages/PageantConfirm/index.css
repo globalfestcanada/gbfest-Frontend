@@ -1,0 +1,208 @@
+/* ------------------------------
+   CONFIRM PAGE WRAPPER
+------------------------------ */
+.confirmation-workspace-box {
+  width: 100%;
+  max-width: 750px;
+  margin: 80px auto 60px auto;  /* Pushes it below the header bar safely */
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.confirmation-workspace-box h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #0b132b;
+  letter-spacing: 0.5px;
+}
+
+/* ------------------------------
+   CONTESTANT INFO CARD
+------------------------------ */
+.badge-profile-summary {
+  padding: 25px;
+  background: #f7f9fc;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 25px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.badge-profile-summary p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.badge-profile-summary p strong {
+  color: #0b132b;
+  font-weight: 600;
+  display: inline-block;
+  width: 140px; /* Aligns dataset metrics neatly */
+}
+
+/* ------------------------------
+   CONFIRM FORM ACTION PANEL
+------------------------------ */
+.organizer-input-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left; /* Left-aligns labels for proper context */
+}
+
+.organizer-input-panel label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0b132b;
+  margin-bottom: -10px; /* Brings labels close to their input targets */
+  padding-left: 2px;
+}
+
+.organizer-input-panel input,
+.organizer-input-panel textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f7f9fc;
+  color: #0b132b;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.organizer-input-panel input:focus,
+.organizer-input-panel textarea:focus {
+  border-color: #3a506b;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(58, 80, 107, 0.25);
+}
+
+.organizer-input-panel textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* ------------------------------
+   BUTTON (MATCHES THEME)
+------------------------------ */
+.commit-entry-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-top: 6px;
+  box-shadow: 0 4px 12px rgba(11, 19, 43, 0.15);
+}
+
+.commit-entry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(11, 19, 43, 0.25);
+}
+
+.commit-entry-btn:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------
+   SERVER TOAST MESSAGES
+------------------------------ */
+.server-response-toast {
+  margin: 18px 0 0;
+  font-size: 15px;
+  color: #0b132b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Fallback state when fetching profile IDs */
+.loading-view {
+  text-align: center;
+  padding: 100px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.loading-view h1 {
+  color: #0b132b;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.loading-view p {
+  color: #3a506b;
+  font-size: 16px;
+}
+
+/* ------------------------------
+   MOBILE RESPONSIVE BREAKPOINT
+------------------------------ */
+@media (max-width: 600px) {
+  .confirmation-workspace-box {
+    margin: 0 auto;         /* Removes structural card gaps near mobile edge headers */
+    padding: 30px 20px;     /* Comfortable internal mobile spacing box */
+    border-radius: 0px;     /* Square edges flush cleanly against mobile viewports */
+    box-shadow: none;       /* Modern flat look styling layout */
+  }
+
+  .confirmation-workspace-box h1 {
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .badge-profile-summary {
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+  }
+
+  .badge-profile-summary p strong {
+    display: block;
+    width: auto;
+    margin-bottom: 2px;
+  }
+
+  .organizer-input-panel {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .organizer-input-panel input,
+  .organizer-input-panel textarea {
+    padding: 14px;
+    font-size: 15px;       /* Fixes responsive input layout shifts on iOS browsers */
+  }
+
+  .commit-entry-btn {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}

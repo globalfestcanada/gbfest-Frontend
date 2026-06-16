@@ -25,6 +25,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ArtistGallery from "./pages/artistGallery";
 import ArtistProfile from "./pages/ArtistProfile";
 import PageantClosedPage from "./pages/PageantClosedPage";
+import PageantRegistration from "./pages/PageantRegistration";
+import PageantScanner from "./pages/PageantScanner";
+import PageantConfirm from "./pages/PageantConfirm";
 
 
 function App() {
@@ -56,6 +59,9 @@ function App() {
         <Route path="admin/login" element={<AdminLogin />} />
         <Route path="admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>}/>
         <Route path="pageant-registration-closed" element={<PageantClosedPage />} />
+        <Route path="pageant-register" element={<PageantRegistration />} />
+        <Route path="pageant-scanner" element={<PageantScanner />} />
+        <Route path="pageant-confirm" element={<PageantConfirm />} />
 
 
 

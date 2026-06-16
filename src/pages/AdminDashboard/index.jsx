@@ -1,4 +1,3 @@
-
 // import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import "./index.css";
@@ -10,9 +9,8 @@
 //   const [artists, setArtists] = useState([]);
 //   const [volunteers, setVolunteers] = useState([]);
 
-//   const API_BASE = "https://globalfest-backend.onrender.com"; // change to your Render URL in prod
+//   const API_BASE = "https://globalfest-backend.onrender.com";
 
-//   // Check token on load
 //   useEffect(() => {
 //     const token = localStorage.getItem("adminToken");
 
@@ -21,11 +19,8 @@
 //       return;
 //     }
 
-//     // Verify token by calling protected endpoint
 //     fetch(`${API_BASE}/api/admin/dashboard`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
+//       headers: { Authorization: `Bearer ${token}` },
 //     })
 //       .then((res) => res.json())
 //       .then((data) => {
@@ -37,30 +32,20 @@
 //       });
 //   }, [navigate]);
 
-//   // Load Artists (PROTECTED)
 //   const loadArtists = async () => {
 //     const token = localStorage.getItem("adminToken");
-
 //     const res = await fetch(`${API_BASE}/api/admin/artists`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
+//       headers: { Authorization: `Bearer ${token}` },
 //     });
-
 //     const data = await res.json();
 //     if (data.success) setArtists(data.artists);
 //   };
 
-//   // Load Volunteers (PROTECTED)
 //   const loadVolunteers = async () => {
 //     const token = localStorage.getItem("adminToken");
-
 //     const res = await fetch(`${API_BASE}/api/admin/volunteers`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
+//       headers: { Authorization: `Bearer ${token}` },
 //     });
-
 //     const data = await res.json();
 //     if (data.success) setVolunteers(data.volunteers);
 //   };
@@ -68,16 +53,13 @@
 //   useEffect(() => {
 //     loadArtists();
 //     loadVolunteers();
-
 //     const interval = setInterval(() => {
 //       loadArtists();
 //       loadVolunteers();
 //     }, 5000);
-
 //     return () => clearInterval(interval);
 //   }, []);
 
-//   // Logout
 //   const handleLogout = () => {
 //     localStorage.removeItem("adminToken");
 //     localStorage.removeItem("adminRole");
@@ -93,7 +75,6 @@
 //         </button>
 //       </div>
 
-//       {/* TABS */}
 //       <div className="admin-tabs">
 //         <button
 //           className={activeTab === "artists" ? "active" : ""}
@@ -110,7 +91,7 @@
 //         </button>
 //       </div>
 
-//       {/* ARTIST TABLE */}
+//       {/* ARTISTS TABLE / MOBILE CARDS */}
 //       {activeTab === "artists" && (
 //         <table>
 //           <thead>
@@ -128,18 +109,21 @@
 //           <tbody>
 //             {artists.map((a) => (
 //               <tr key={a._id}>
-//                 <td>{a.fullName}</td>
-//                 <td>{a.teamName}</td>
-//                 <td>{a.teamSize}</td>
+//                 <td data-label="Name">{a.fullName}</td>
+//                 <td data-label="Team">{a.teamName}</td>
+//                 <td data-label="Team Size">{a.teamSize}</td>
 
-//                 <td className={a.checkedIn ? "status-yes" : "status-no"}>
+//                 <td
+//                   data-label="Checked In"
+//                   className={a.checkedIn ? "status-yes" : "status-no"}
+//                 >
 //                   {a.checkedIn ? "Yes" : "No"}
 //                 </td>
 
-//                 <td>{a.checkedInCount || 0}</td>
-//                 <td>{a.checkedInBy || "-"}</td>
+//                 <td data-label="Arrived">{a.checkedInCount || 0}</td>
+//                 <td data-label="Volunteer">{a.checkedInBy || "-"}</td>
 
-//                 <td>
+//                 <td data-label="Time">
 //                   {a.checkedInAt
 //                     ? new Date(a.checkedInAt).toLocaleString()
 //                     : "-"}
@@ -150,7 +134,7 @@
 //         </table>
 //       )}
 
-//       {/* VOLUNTEER TABLE */}
+//       {/* VOLUNTEERS TABLE / MOBILE CARDS */}
 //       {activeTab === "volunteers" && (
 //         <table>
 //           <thead>
@@ -168,18 +152,21 @@
 //           <tbody>
 //             {volunteers.map((v) => (
 //               <tr key={v._id}>
-//                 <td>{v.fullName}</td>
-//                 <td>{v.role}</td>
-//                 <td>{v.phone}</td>
-//                 <td>{v.email}</td>
+//                 <td data-label="Name">{v.fullName}</td>
+//                 <td data-label="Role">{v.role}</td>
+//                 <td data-label="Phone">{v.phone}</td>
+//                 <td data-label="Email">{v.email}</td>
 
-//                 <td className={v.checkedIn ? "status-yes" : "status-no"}>
+//                 <td
+//                   data-label="Checked In"
+//                   className={v.checkedIn ? "status-yes" : "status-no"}
+//                 >
 //                   {v.checkedIn ? "Yes" : "No"}
 //                 </td>
 
-//                 <td>{v.checkedInBy || "-"}</td>
+//                 <td data-label="Checked In By">{v.checkedInBy || "-"}</td>
 
-//                 <td>
+//                 <td data-label="Time">
 //                   {v.checkedInAt
 //                     ? new Date(v.checkedInAt).toLocaleString()
 //                     : "-"}
@@ -207,6 +194,7 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("artists");
   const [artists, setArtists] = useState([]);
   const [volunteers, setVolunteers] = useState([]);
+  const [pageants, setPageants] = useState([]); 
 
   const API_BASE = "https://globalfest-backend.onrender.com";
 
@@ -249,13 +237,30 @@ const AdminDashboard = () => {
     if (data.success) setVolunteers(data.volunteers);
   };
 
+  const loadPageants = async () => {
+    const token = localStorage.getItem("adminToken");
+    const res = await fetch(`${API_BASE}/api/admin/pageant`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await res.json();
+    
+    // 🛠️ FIXED: Changed from data.data to data.contestants to read your API response correctly
+    if (data.success) {
+      setPageants(data.contestants || []);
+    }
+  };
+
   useEffect(() => {
     loadArtists();
     loadVolunteers();
+    loadPageants();
+
     const interval = setInterval(() => {
       loadArtists();
       loadVolunteers();
-    }, 5000);
+      loadPageants();
+    }, 5000); 
+
     return () => clearInterval(interval);
   }, []);
 
@@ -288,9 +293,16 @@ const AdminDashboard = () => {
         >
           Volunteers
         </button>
+
+        <button
+          className={activeTab === "pageants" ? "active" : ""}
+          onClick={() => setActiveTab("pageants")}
+        >
+          Pageants
+        </button>
       </div>
 
-      {/* ARTISTS TABLE / MOBILE CARDS */}
+      {/* ARTISTS TABLE */}
       {activeTab === "artists" && (
         <table>
           <thead>
@@ -304,28 +316,22 @@ const AdminDashboard = () => {
               <th>Time</th>
             </tr>
           </thead>
-
           <tbody>
             {artists.map((a) => (
               <tr key={a._id}>
                 <td data-label="Name">{a.fullName}</td>
                 <td data-label="Team">{a.teamName}</td>
                 <td data-label="Team Size">{a.teamSize}</td>
-
                 <td
                   data-label="Checked In"
                   className={a.checkedIn ? "status-yes" : "status-no"}
                 >
                   {a.checkedIn ? "Yes" : "No"}
                 </td>
-
                 <td data-label="Arrived">{a.checkedInCount || 0}</td>
                 <td data-label="Volunteer">{a.checkedInBy || "-"}</td>
-
                 <td data-label="Time">
-                  {a.checkedInAt
-                    ? new Date(a.checkedInAt).toLocaleString()
-                    : "-"}
+                  {a.checkedInAt ? new Date(a.checkedInAt).toLocaleString() : "-"}
                 </td>
               </tr>
             ))}
@@ -333,7 +339,7 @@ const AdminDashboard = () => {
         </table>
       )}
 
-      {/* VOLUNTEERS TABLE / MOBILE CARDS */}
+      {/* VOLUNTEERS TABLE */}
       {activeTab === "volunteers" && (
         <table>
           <thead>
@@ -347,7 +353,6 @@ const AdminDashboard = () => {
               <th>Time</th>
             </tr>
           </thead>
-
           <tbody>
             {volunteers.map((v) => (
               <tr key={v._id}>
@@ -355,23 +360,60 @@ const AdminDashboard = () => {
                 <td data-label="Role">{v.role}</td>
                 <td data-label="Phone">{v.phone}</td>
                 <td data-label="Email">{v.email}</td>
-
                 <td
                   data-label="Checked In"
                   className={v.checkedIn ? "status-yes" : "status-no"}
                 >
                   {v.checkedIn ? "Yes" : "No"}
                 </td>
-
                 <td data-label="Checked In By">{v.checkedInBy || "-"}</td>
-
                 <td data-label="Time">
-                  {v.checkedInAt
-                    ? new Date(v.checkedInAt).toLocaleString()
-                    : "-"}
+                  {v.checkedInAt ? new Date(v.checkedInAt).toLocaleString() : "-"}
                 </td>
               </tr>
             ))}
+          </tbody>
+        </table>
+      )}
+
+      {/* PAGEANTS TABLE */}
+      {activeTab === "pageants" && (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Culture</th>
+              <th>Bracket</th>
+              <th>Group Size</th>
+              <th>Checked In By</th>
+              <th>Time</th>
+              <th>Gate Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pageants.length === 0 ? (
+              <tr>
+                <td colSpan="7" style={{ textAlign: "center", fontStyle: "italic", color: "#64748b" }}>
+                  No contestants have checked in yet.
+                </td>
+              </tr>
+            ) : (
+              pageants.map((p) => (
+                <tr key={p._id}>
+                  <td data-label="Name" style={{ fontWeight: "600" }}>{p.fullName}</td>
+                  <td data-label="Culture">{p.culture}</td>
+                  <td data-label="Bracket" style={{ textTransform: "capitalize" }}>{p.gender || "-"}</td>
+                  <td data-label="Group Size" style={{ fontWeight: "600" }}>{p.numberOfPeople || 1}</td>
+                  <td data-label="Checked In By">{p.checkedInBy || "-"}</td>
+                  <td data-label="Time">
+                    {p.checkedInAt ? new Date(p.checkedInAt).toLocaleString() : "-"}
+                  </td>
+                  <td data-label="Gate Notes" style={{ color: "#64748b", fontSize: "0.9em" }}>
+                    {p.notes || "—"}
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       )}
