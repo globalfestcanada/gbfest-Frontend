@@ -1,0 +1,204 @@
+/* ------------------------------
+   SCANNER PAGE WRAPPER
+------------------------------ */
+.scanner-root-view {
+  width: 100%;
+  max-width: 750px;
+  margin: 80px auto 60px auto;  /* Expanded top margin to safely drop below global header navs */
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  box-sizing: border-box; /* Ensures padding behaves inside fixed widths */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scanner-root-view h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px; /* Slightly tightened to look balanced with the subtitle description */
+  color: #0b132b;
+  letter-spacing: 0.5px;
+}
+
+/* ------------------------------
+   SCANNER CAMERA VIEWPORT BOX
+------------------------------ */
+.embedded-camera-box {
+  margin: 20px auto;
+  width: 100% !important;
+  max-width: 350px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  border: none !important;
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   DYNAMIC RECORD PROFILE DATA CARD
+------------------------------ */
+.profile-data-card {
+  margin-top: 25px;
+  padding: 25px;
+  background: #f7f9fc;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-data-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b132b;
+}
+
+.profile-data-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.profile-data-card p strong {
+  color: #0b132b;
+  font-weight: 600;
+  display: inline-block;
+  width: 130px; /* Aligns data layout properties horizontally */
+}
+
+/* ------------------------------
+   PROCEED / RESET ACTION BUTTONS
+------------------------------ */
+.scan-refresh-btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 18px;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: none;
+}
+
+.scan-refresh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scan-refresh-btn:active {
+  transform: scale(0.99);
+}
+
+/* ------------------------------
+   ALERT MESSAGE LOGS
+------------------------------ */
+.alert-text {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* ------------------------------
+   HTML5-QRCODE LIBRARY OVERRIDES
+------------------------------ */
+.embedded-camera-box img[alt="Camera menu icon"] {
+  display: none !important; /* Eliminate original placeholder graphics framework asset */
+}
+
+/* Match unified components over library target container selector tags */
+#unified-reader-box button,
+#unified-reader-box select {
+  font-family: "Poppins", sans-serif;
+}
+
+#unified-reader-box button {
+  background: linear-gradient(to right, #0b132b, #3a506b) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important; /* Prevents mobile web kit layout zoom shift bugs */
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: 0.25s ease !important;
+  display: inline-block !important;
+  margin: 12px auto !important;
+}
+
+#unified-reader-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+#unified-reader-box select {
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  border-radius: 6px !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+  margin: 8px 0 !important;
+}
+
+/* Balanced formatting corrections across selection interface blocks */
+#unified-reader-box__dashboard_section_csr button {
+  margin: 8px 0 !important;
+  width: 100% !important;
+  max-width: 280px !important; /* Expands permission triggers cleanly on small layout regions */
+}
+
+/* ------------------------------
+   MOBILE RESPONSIVE BREAKPOINT
+------------------------------ */
+@media (max-width: 600px) {
+  .scanner-root-view {
+    margin: 0 auto;         /* Removes desktop margins to flush component to viewport edges */
+    padding: 30px 20px;     /* Leaves balanced breathing room inside mobile screens */
+    border-radius: 0px;     /* Seamless layout connection directly under global nav */
+    box-shadow: none;       /* Drops heavy shadows for flat mobile view aesthetics */
+  }
+
+  .scanner-root-view h1 {
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .embedded-camera-box {
+    max-width: 320px;       /* Maximize targeting boundaries comfortably inside small panels */
+  }
+
+  .profile-data-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .profile-data-card p strong {
+    display: block;
+    width: auto;
+    margin-bottom: 2px;
+  }
+}

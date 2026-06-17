@@ -28,6 +28,7 @@ import PageantClosedPage from "./pages/PageantClosedPage";
 import PageantRegistration from "./pages/PageantRegistration";
 import PageantScanner from "./pages/PageantScanner";
 import PageantConfirm from "./pages/PageantConfirm";
+import UnifiedScanner from "./pages/UnifiedScanner";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         <Route path="pageant-register" element={<PageantRegistration />} />
         <Route path="pageant-scanner" element={<PageantScanner />} />
         <Route path="pageant-confirm" element={<PageantConfirm />} />
+        <Route path="qr-scanner" element={<UnifiedScanner />} />
 
 
 
