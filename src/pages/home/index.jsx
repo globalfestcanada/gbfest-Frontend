@@ -10,6 +10,7 @@ import FAQ from "../../components/FAQ";
 import EventLocation from "../../components/location";
 import ContactUs from "../../components/Contact Us";
 import FestivalAnnouncements from "../../components/Announcements";
+import PartnerGrid from "../../components/PartnerGrid";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       
       <AboutUsPreview />
       <Countdown />
+      <PartnerGrid />
       <FestivalAnnouncements />
       <GetInvolvedTeaser />
       <FAQ />

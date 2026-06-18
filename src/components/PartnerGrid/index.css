@@ -1,0 +1,84 @@
+/* Container Spacing */
+.partners-section-wrapper {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Main Heading Style (Matches .get-involved-teaser h2) */
+.partners-main-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #0b132b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Row wrapper */
+.partners-row-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Individual columns with hover movement */
+.partner-column-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.partner-column-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Sub-headings (Matches .promo-column h3) */
+.partner-heading-text {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #3a506b;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Circle frames styled with your promo shadow & borders */
+.partner-circle-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.partner-circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Descriptions (Matches .promo-column p) */
+.partner-body-paragraph {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Responsive breakpoint matching your code */
+@media (max-width: 900px) {
+  .partners-row-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partner-column-item {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
+}

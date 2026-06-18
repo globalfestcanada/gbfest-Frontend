@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Sub-Page Layout Container
+   ========================================================================== */
+.logos-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fafbfc 0%, #f1f5f9 100%);
+  padding: 80px 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+.logos-page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Navigation Back Anchor Control */
+.back-navigation-btn {
+  background: none;
+  border: none;
+  color: #3a506b;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 40px;
+  transition: all 0.2s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.back-navigation-btn .back-arrow {
+  transition: transform 0.2s ease;
+}
+
+.back-navigation-btn:hover {
+  color: #0b132b;
+  background-color: rgba(58, 80, 107, 0.05);
+}
+
+.back-navigation-btn:hover .back-arrow {
+  transform: translateX(-3px);
+}
+
+/* Header Text Blocks */
+.logos-page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.logos-page-header h1 {
+  font-size: 2.2rem;
+  color: #0b132b;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Matching the main layout accent lines */
+.header-accent-bar {
+  width: 50px;
+  height: 3px;
+  background-color: #3a506b;
+  margin: 0 auto 16px auto;
+  border-radius: 2px;
+}
+
+.logos-page-header p {
+  font-size: 15px;
+  color: #55657e;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Logo Cards Responsive Grid Frame
+   ========================================================================== */
+.logo-display-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+/* Premium Dynamic Interactive Card Design */
+.logo-card-slot {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(11, 19, 43, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-img-container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-card-slot img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none; 
+  opacity: 1;   
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sliding Info Overlay text on hover */
+.logo-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(11, 19, 43, 0) 0%, rgba(11, 19, 43, 0.9) 80%);
+  padding: 30px 12px 12px 12px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.logo-card-overlay span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Hover States across Card Entities */
+.logo-card-slot:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(11, 19, 43, 0.12); /* Slightly deeper shadow for colored cards */
+  border-color: #cbd5e1;
+}
+
+.logo-card-slot:hover img {
+  transform: scale(1.05);
+}
+
+.logo-card-slot:hover .logo-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Error View Layout fallback styles */
+.logos-error-wrapper {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #ef4444;
+  font-weight: 600;
+}
