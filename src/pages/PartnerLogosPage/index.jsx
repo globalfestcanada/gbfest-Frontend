@@ -109,7 +109,8 @@ const LOGO_DATASTORE = {
       { name: "Picante Mexican Food", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor9.jpeg" },
       { name: "The Dopamine Lounge", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendor12.jpg" },
       { name: "Shen Yun", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendor13.png" },
-      { name: "Albanian - Barista and chef cafe", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor14.png" }
+      { name: "Albanian - Barista and chef cafe", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor14.png" },
+      { name: "Alforat Iraqi Street Food", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor15.jpeg" }
       
     ]
   },
