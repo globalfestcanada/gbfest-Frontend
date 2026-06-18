@@ -108,7 +108,9 @@ const LOGO_DATASTORE = {
       { name: "West Cuisine-Tongs n Grill", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor8.jpeg" },
       { name: "Picante Mexican Food", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor9.jpeg" },
       { name: "The Dopamine Lounge", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendor12.jpg" },
-      { name: "Shen Yun", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendor13.png" }
+      { name: "Shen Yun", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendor13.png" },
+      { name: "Albanian - Barista and chef cafe", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Vendors/Vendor14.png" }
+      
     ]
   },
   sponsors: {
