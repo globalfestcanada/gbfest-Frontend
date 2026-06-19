@@ -1,0 +1,293 @@
+/* Layout Wrapper */
+.schedule-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fafbfc 0%, #f1f5f9 100%);
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.schedule-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Header Sections */
+.schedule-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.schedule-header h1 {
+  font-size: 2.2rem;
+  color: #0b132b;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.schedule-accent-bar {
+  width: 60px;
+  height: 4px;
+  background-color: #3a506b;
+  margin: 0 auto 16px auto;
+  border-radius: 2px;
+}
+
+.schedule-header p {
+  color: #55657e;
+  font-size: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Categories Filter Buttons */
+.schedule-filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.filter-tab-btn {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #55657e;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.filter-tab-btn.active-tab {
+  background: linear-gradient(135deg, #0b132b 0%, #3a506b 100%);
+  color: #ffffff;
+  border-color: #0b132b;
+  box-shadow: 0 4px 12px rgba(11, 19, 43, 0.15);
+}
+
+/* Group Block Structural Breaks */
+.schedule-blocks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.schedule-time-group-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.group-title-side {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.group-letter-badge {
+  background-color: #0b132b;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.group-block-header h2 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0b132b;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.group-time-span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a506b;
+  background-color: rgba(58, 80, 107, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Horizontal Cards Layout Structure */
+.schedule-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.showcase-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(11, 19, 43, 0.02);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  align-items: center; /* Vertically centers text beside the tall poster graphic */
+}
+
+/* Interactivity styles for active links */
+.clickable-showcase-card {
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.clickable-showcase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(11, 19, 43, 0.07);
+  border-color: #cbd5e1;
+}
+
+.clickable-showcase-card:hover .showcase-perf-title {
+  color: #3a506b;
+}
+
+/* Alternating Image Layouts */
+.showcase-card.align-image-left {
+  flex-direction: row;
+}
+
+.showcase-card.align-image-right {
+  flex-direction: row-reverse;
+}
+
+/* 📊 TAILORED VERTICAL POSTER CONTAINER */
+.showcase-img-frame {
+  position: relative;
+  flex: 0 0 150px;          /* Width room allocated for the asset layout */
+  aspect-ratio: 4 / 5;      /* Perfect portrait ratio matching the layout of Art17.jpeg */
+  background-color: #0b132b; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* Fits the entire graphic perfectly inside without clipping text */
+  background-color: #0b132b; /* Fills negative spacing seamlessly if any aspect ratios vary slightly */
+  transition: transform 0.3s ease;
+}
+
+.clickable-showcase-card:hover .showcase-img-frame img {
+  transform: scale(1.03);   
+}
+
+/* Content Details Configurations */
+.showcase-info-panel {
+  flex: 1;
+  padding: 24px 32px;       
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.showcase-card.align-image-right .showcase-info-panel {
+  text-align: left; 
+}
+
+.info-top-row {
+  display: flex;
+  align-items: center;
+}
+
+.showcase-perf-title {
+  font-size: 1.35rem;        
+  font-weight: 800;
+  color: #0b132b;
+  margin: 0;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+/* Badge Nodes Styles */
+.segment-badge {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-music { background-color: #dbeafe; color: #1e40af; }
+.badge-dance { background-color: #fce7f3; color: #9d174d; }
+.badge-band { background-color: #fef3c7; color: #92400e; }
+.badge-pageant { background-color: #e0f2fe; color: #0369a1; }
+.segment-badge:not([class*="badge-"]) { background-color: #f1f5f9; color: #475569; }
+
+/* Disclaimer Card Block Notice Styles */
+.schedule-disclaimer-card {
+  margin-top: 60px;
+  background-color: rgba(58, 80, 107, 0.04);
+  border: 1px dashed #3a506b;
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.schedule-disclaimer-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #3a506b;
+  line-height: 1.5;
+}
+
+/* Mobile Responsive Breakdowns */
+@media (max-width: 600px) {
+  .showcase-card.align-image-left,
+  .showcase-card.align-image-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .showcase-img-frame {
+    flex: none;
+    width: 100%;
+    max-height: 380px;      /* Prevents portrait posters from stretching excessively tall on small screen feeds */
+    aspect-ratio: auto;     
+  }
+  
+  .showcase-img-frame img {
+    object-fit: contain;    /* Guarantees full graphic visibility across all devices */
+  }
+  
+  .showcase-info-panel {
+    padding: 20px;
+    text-align: center !important; /* Centers details beautifully when stacked below the poster on mobile */
+  }
+  
+  .info-top-row {
+    justify-content: center;
+  }
+  
+  .group-block-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
