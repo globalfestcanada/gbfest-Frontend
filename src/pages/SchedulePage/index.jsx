@@ -24,7 +24,7 @@ const GROUPED_SCHEDULE = [
     programs: [
       { segment: "Dance", performance: "Nyai Randha (Indonesia)", slug: "nyai-randha", isPageant: false, image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Art19.jpeg" },
       { segment: "Dance", performance: "Trivine Dance Group", slug: "trivine-dance-group", isPageant: false, image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Art21.png" },
-      { segment: "Band", performance: "Riverbend", slug: "", isPageant: false, image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600" },
+      { segment: "Band", performance: "Riverbend", slug: "riverbend", isPageant: false, image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Art30.jpeg" },
       { segment: "Pageant", performance: "Mister & Miss Global Fest 2026 – First Round", slug: "", isPageant: true, image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Pageant12.jpg" },
       { segment: "Dance", performance: "Tamrika", slug: "tamrika", isPageant: false, image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Art1.jpeg" },
       { segment: "Band", performance: "The Jacks Of All Trades", slug: "the-jacks-of-all-trades", isPageant: false, image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Art2.jpeg" }
