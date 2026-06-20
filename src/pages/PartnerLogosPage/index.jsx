@@ -125,13 +125,15 @@ const LOGO_DATASTORE = {
       { name: "Affinity Mortgage Solutions", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Partners/Partner5.jpeg" }
     ]
   },
-//   community: {
-//     title: "COMMUNITY PARTNERS",
-//     description: "Local civic alliances, cultural institutions, and grassroots organizations making it all possible.",
-//     logos: [
-//       { name: "Community Alliance", url: "https://placehold.co/200x100?text=Community+Logo" }
-//     ]
-//   }
+  community: {
+    title: "COMMUNITY PARTNERS",
+    description: "Local civic alliances, cultural institutions, and grassroots organizations making it all possible.",
+    logos: [
+      { name: "Philippine Canadian Charitable Foundation", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community1.jpeg" },
+      { name: "Ontario chinese cultural network", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community2.jpeg" },
+      { name: "Mexican Day Toronto", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community4.png" }
+    ]
+  }
 };
 
 const PartnerLogosPage = () => {

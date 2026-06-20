@@ -18,12 +18,12 @@ const PartnerGrid = () => {
       image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Partne.png",
       desc: "Empowering our vision. We are immensely grateful to our corporate sponsors and industry leaders whose generous support and shared vision power our venue activations, digital infrastructure, and festival experiences."
     },
-    // {
-    //   id: "community", 
-    //   title: "COMMUNITY PARTNERS",
-    //   image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Community.png",
-    //   desc: "Stronger together. Celebrate the incredible local alliances, cultural institutions, and grassroots non-profits dedicating their passion and resources to build a connected, diverse, and vibrant festival community."
-    // }
+    {
+      id: "community", 
+      title: "COMMUNITY PARTNERS",
+      image: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/Community.png",
+      desc: "Stronger together. Celebrate the incredible local alliances, cultural institutions, and grassroots non-profits dedicating their passion and resources to build a connected, diverse, and vibrant festival community."
+    }
   ];
 
   return (
