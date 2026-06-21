@@ -131,7 +131,9 @@ const LOGO_DATASTORE = {
     logos: [
       { name: "Philippine Canadian Charitable Foundation", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community1.jpeg" },
       { name: "Ontario chinese cultural network", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community2.jpeg" },
-      { name: "Mexican Day Toronto", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community4.png" }
+      { name: "Mexican Day Toronto", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community4.png" },
+      { name: "Neema Child Project", url: "https://canada-globalfest-assets.s3.ca-central-1.amazonaws.com/community/Community5.jpeg" }
+
     ]
   }
 };
