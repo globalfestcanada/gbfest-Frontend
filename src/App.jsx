@@ -31,6 +31,8 @@ import PageantConfirm from "./pages/PageantConfirm";
 import UnifiedScanner from "./pages/UnifiedScanner";
 import PartnerLogosPage from "./pages/PartnerLogosPage";
 import SchedulePage from "./pages/SchedulePage";
+import VendorFeedbackForm from "./pages/VendorFeedbackForm";
+import ArtistFeedbackForm from "./pages/ArtistFeedback";
 
 
 function App() {
@@ -68,6 +70,8 @@ function App() {
         <Route path="qr-scanner" element={<UnifiedScanner />} />
         <Route path="partners/:categoryId" element={<PartnerLogosPage />} />
         <Route path="schedule-page" element={<SchedulePage />} />
+        <Route path="vendor-feedback" element={<VendorFeedbackForm />} />
+        <Route path="artist-feedback" element={<ArtistFeedbackForm />} />
 
 
 

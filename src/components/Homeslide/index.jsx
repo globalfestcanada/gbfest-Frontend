@@ -10,14 +10,10 @@ const Homeslide = () => {
         <p className="event-details">
           June 21, 2026 &nbsp;  Sankofa Square, Toronto &nbsp;  Open to all
         </p>
-        {/* <div className="hero-buttons">
-          <a href="#program" className="hero-btn primary">Free Entry – Save the Date</a>
-          <a href="#program" className="hero-btn secondary">Explore Program</a>
-        </div> */}
+       
         
         <p className="hero-credits">
-          {/* Organized by <strong>International Youth Canada</strong><br />
-          Powered by <strong>Levitate Entertainment</strong><br /> */}
+          
           <em>Connecting Communities, Celebrating Culture</em>
         </p>
       </div>

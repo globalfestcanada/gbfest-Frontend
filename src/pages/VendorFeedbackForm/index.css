@@ -1,0 +1,281 @@
+/* ----------------------------------------------------------------------
+   MAIN CONTAINER & TYPOGRAPHY
+---------------------------------------------------------------------- */
+.vendor-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 45px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.vendor-page h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0b132b;
+  letter-spacing: -0.5px;
+}
+
+.vendor-subtext {
+  text-align: center;
+  color: #5c677d;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* FORM LAYOUT CONTAINER */
+.vendor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* SECTION STRUCTURES */
+.vendor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vendor-section h2 {
+  font-size: 20px;
+  color: #0b132b;
+  font-weight: 600;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+/* GRID INPUT LAYOUT (Business Info Section) */
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Span the full width for uneven items like products line row */
+.input-grid input[name="products"] {
+  grid-column: span 2;
+}
+
+/* FORM CONTROL INPUT FIELDS */
+.vendor-section input[type="text"],
+.vendor-section input[type="email"],
+.vendor-section textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  background: #f8fafc;
+  font-family: inherit;
+  font-size: 15px;
+  color: #1e293b;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.vendor-section input:focus,
+.vendor-section textarea:focus {
+  outline: none;
+  border-color: #3a506b;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(58, 80, 107, 0.1);
+}
+
+.vendor-section textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* PREMIUM MODERN CHIP SELECTION CARDS FOR RADIO GROUPS */
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin: 8px 0 16px 0;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-group label:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Target elements when user selects options */
+.radio-group label:has(input:checked) {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+/* Hide raw baseline defaults safely */
+.radio-group input[type="radio"] {
+  accent-color: #3b82f6;
+  width: 16px;
+  height: 16px;
+}
+
+/* MATRIX RATING ROW CARD MODULES */
+.rating-row {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+}
+
+.rating-row > label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0b132b;
+  margin-bottom: 14px;
+}
+
+/* SUBMIT CTA ACTION BUTTON */
+.vendor-submit-btn {
+  padding: 16px;
+  background: linear-gradient(135deg, #0b132b 0%, #3a506b 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 20px;
+}
+
+.vendor-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(11, 19, 43, 0.25);
+}
+
+.vendor-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------------------
+   CUSTOM SUCCESS MODULE STYLES
+---------------------------------------------------------------------- */
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px !important;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-icon-circle {
+  width: 80px;
+  height: 80px;
+  background: #eff6ff;
+  border: 2px solid #3b82f6;
+  color: #1d4ed8;
+  border-radius: 50%;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* REDIRECT COUNTDOWN PROGRESS BAR */
+.redirect-loader-bar {
+  width: 100%;
+  max-width: 280px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0 10px 0;
+}
+
+.redirect-loader-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #0b132b, #3a506b);
+  border-radius: 10px;
+  animation: loadOut 3s linear forwards;
+}
+
+.redirect-text {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* KEYFRAMES ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadOut {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ----------------------------------------------------------------------
+   RESPONSIVE DESIGN SYSTEM MEDIA BREAKPOINTS
+---------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .vendor-page {
+    padding: 25px 20px;
+    margin: 15px;
+  }
+  
+  .vendor-page h1 {
+    font-size: 24px;
+  }
+
+  .input-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .input-grid input[name="products"] {
+    grid-column: span 1;
+  }
+
+  .radio-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

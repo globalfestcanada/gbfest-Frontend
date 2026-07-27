@@ -1,88 +1,4 @@
-/* 
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-:root {
- 
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit; 
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
-/* ==========================================================================
-   1. GLOBAL SYSTEM SETTINGS (Clean & Scale-Corrected)
-   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
@@ -113,7 +29,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-/* Globally optimized heading size ratios for 13" laptop displays at 100% */
 h1 {
   font-size: 2.2rem; 
   line-height: 1.2;
@@ -138,11 +53,7 @@ a:hover {
 }
 
 
-/* ==========================================================================
-   2. GLOBAL LAYOUT WRAPPERS (Fixes "Too Big" and "Awkward Spacing")
-   ========================================================================== */
 
-/* Main wrapping framework around your pages (Apply this class to your main content views) */
 .page-container {
   max-width: 1100px;        /* Anchors the content so it stays centered and elegant */
   margin: 0 auto;           /* Centers the entire page site layout on screen */
@@ -172,12 +83,8 @@ a:hover {
   margin-top: 20px;
 }
 
-
-/* ==========================================================================
-   3. VOTING INTERFACE STYLING (Perfected Alignment)
-   ========================================================================== */
 .vote-page {
-  max-width: 440px;         /* Slightly narrowed for a premium dashboard card aesthetic */
+  max-width: 440px;         
   margin: 50px auto;
   padding: 30px 24px;
   text-align: center;
@@ -284,9 +191,7 @@ a:hover {
 }
 
 
-/* ==========================================================================
-   4. RESPONSIVE COMPACT MEDIA BREAKPOINTS
-   ========================================================================== */
+
 @media (max-width: 600px) {
   .page-container {
     padding: 24px 16px;

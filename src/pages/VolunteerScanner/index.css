@@ -71,10 +71,7 @@
   }
 }
 
-/* ------------------------------
-   HTML5-QRCODE LIBRARY OVERRIDES
------------------------------- */
-/* Uniform button styling for volunteer scanner */
+
 #volunteer-reader button,
 #volunteer-reader a {
   background: linear-gradient(to right, #0b132b, #3a506b) !important;

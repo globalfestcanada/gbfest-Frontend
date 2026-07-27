@@ -1,0 +1,161 @@
+/* ----------------------------------------------------------------------
+   ARTIST PROFILE FORM OVERRIDES & SPECIFIC HOOKS
+---------------------------------------------------------------------- */
+.artist-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 45px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.artist-page h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0b132b;
+  letter-spacing: -0.5px;
+}
+
+.artist-subtext {
+  text-align: center;
+  color: #5c677d;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.artist-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.artist-section h2 {
+  font-size: 20px;
+  color: #0b132b;
+  font-weight: 600;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+/* INPUT TEXT CONTROLS */
+.artist-section input[type="text"],
+.artist-section input[type="email"],
+.artist-section textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  background: #f8fafc;
+  font-family: inherit;
+  font-size: 15px;
+  color: #1e293b;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.artist-section input:focus,
+.artist-section textarea:focus {
+  outline: none;
+  border-color: #3a506b;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(58, 80, 107, 0.1);
+}
+
+/* ARTIST LIAISON CHECKBOX SYSTEM CONTAINER */
+.checkbox-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #344054;
+  margin: 10px 0 2px 0;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.checkbox-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.checkbox-item:hover {
+  background: #f1f5f9;
+}
+
+.checkbox-item input[type="checkbox"] {
+  accent-color: #3b82f6;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.checkbox-item span {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* SUBMIT CTA ACTION BUTTON */
+.artist-submit-btn {
+  padding: 16px;
+  background: linear-gradient(135deg, #0b132b 0%, #3a506b 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 20px;
+}
+
+.artist-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(11, 19, 43, 0.25);
+}
+
+.artist-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE MEDIA HOOKS */
+@media (max-width: 768px) {
+  .artist-page {
+    padding: 25px 20px;
+    margin: 15px;
+  }
+  
+  .artist-page h1 {
+    font-size: 24px;
+  }
+}

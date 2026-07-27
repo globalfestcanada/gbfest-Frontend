@@ -29,9 +29,9 @@ const Home = () => {
       <Volunteer />
       <ContactUs />
       <section className="home-section">
-        {/* Blank white section for now */}
+        
       </section>
-       {/* <Footer /> */}
+      
     </div>
   );
 };

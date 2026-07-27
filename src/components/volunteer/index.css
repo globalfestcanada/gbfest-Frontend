@@ -12,8 +12,8 @@
 
 .volunteer-content {
   display: flex;
-  justify-content: center;   /* ✅ center horizontally */
-  align-items: center;       /* ✅ center vertically */
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
   gap: 5rem;
   flex-wrap: wrap;
   max-width: 1000px;         /* keep content tight */

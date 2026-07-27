@@ -47,8 +47,9 @@ const PageantFinalCard = ({ name, culture, image, bio, isFlipped, onFlip }) => {
         </div>
       </div>
 
-      {/* VOTE BUTTON OUTSIDE THE FLIP CARD */}
-      <button
+      {/* VOTE BUTTON OUTSIDE THE FLIP CARD  Turn on if needed*/}
+      
+      {/* <button
         className="vote-btn"
         onClick={(e) => {
           e.stopPropagation(); 
@@ -56,7 +57,7 @@ const PageantFinalCard = ({ name, culture, image, bio, isFlipped, onFlip }) => {
         }}
       >
         Vote
-      </button>
+      </button> */}
     </div>
   );
 };

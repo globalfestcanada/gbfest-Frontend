@@ -28,10 +28,13 @@ function MenuTab() {
   <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
   <li><Link to="/getinvolved" onClick={() => setMenuOpen(false)}>Get Involved</Link></li>
   
-  <li><Link to="/Pageant Contestants" onClick={() => setMenuOpen(false)}>Pageant Lineup</Link></li>
+  {/* <li><Link to="/Pageant Contestants" onClick={() => setMenuOpen(false)}>Pageant Lineup</Link></li> */}
   <li><Link to="/Performers" onClick={() => setMenuOpen(false)}>Our Performers</Link></li>
   <li><Link to="/schedule-page" onClick={() => setMenuOpen(false)}>Program Flow</Link></li>
   <li><Link to="/contactUs" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+  <li><Link to="/vendor-feedback" onClick={() => setMenuOpen(false)}>Vendor Feedback</Link></li>
+  <li><Link to="/artist-feedback" onClick={() => setMenuOpen(false)}>Artist Feedback</Link></li>
+
 </ul>
 
     </nav>

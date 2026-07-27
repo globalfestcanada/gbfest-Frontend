@@ -13,12 +13,12 @@ const Footer = () => {
           <div className="footer-logo">
             <span className="footer-caption">Organized by</span>
             <img src="/iyc-logo.png" alt="International Youth Canada" />
-            {/* <span className="footer-caption">International Youth Canada</span> */}
+           
           </div>
           <div className="footer-logo">
             <span className="footer-caption">Powered by</span>
             <img src="/levitate-logo.png" alt="Levitate Entertainment" />
-            {/* <span className="footer-caption">Levitate Entertainment</span> */}
+           
           </div>
         </div>
 
@@ -29,7 +29,7 @@ const Footer = () => {
           <p>contact@canadaglobalfest.ca </p>
         </div>
 
-        {/* Right social + button */}
+        
         <div className="footer-right">
           <div className="footer-social">
             <a href="https://www.instagram.com/globalfestcanada/" target="_blank" rel="noopener noreferrer">
@@ -43,14 +43,14 @@ const Footer = () => {
             </a>
 
           </div>
-          {/* ✅ Use Link instead of button */}
+          
           <Link to="/volunteer" className="join-btn">
             Join as a Volunteer
           </Link>
         </div>
       </div>
 
-      {/* Copyright segment */}
+      
       <div className="footer-bottom">
         <hr />
         <div className="footer-logo">

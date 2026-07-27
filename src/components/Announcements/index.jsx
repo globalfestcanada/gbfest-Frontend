@@ -38,10 +38,7 @@ const FestivalAnnouncements = () => {
           className="announcement-card fade-in delay"
           onClick={() => navigate("/procession")}
         >
-          <div className="image-frame">
-            <img src="/placeholder.png" alt="Photography Contest" />
-          </div>
-        </div> */}
+          */}
 
       </div>
     </section>

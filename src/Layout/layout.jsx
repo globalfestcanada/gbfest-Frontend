@@ -8,7 +8,7 @@ const Layout = () => {
     <>
       <MenuTab />
       <main>
-        <Outlet /> {/* ✅ this is where each page will render */}
+        <Outlet /> 
       </main>
       <Footer />
     </>
